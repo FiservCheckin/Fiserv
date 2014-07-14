@@ -28,7 +28,7 @@
             <tr>
                 <td class="auto-style2">First Name:</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="Fname" runat="server" Width="180px"></asp:TextBox>
+                    <asp:TextBox ID="Fname" runat="server" Width="180px" OnTextChanged="Fname_TextChanged"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Fname" ErrorMessage="First Name Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>

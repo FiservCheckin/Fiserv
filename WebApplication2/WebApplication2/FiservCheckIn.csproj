@@ -61,10 +61,11 @@
     <Content Include="App_Data\FiservDatabase_log.ldf">
       <DependentUpon>FiservDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="SuccessPage.aspx" />
+    <Content Include="SignupSuccessPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="FiservSignUpForm.aspx" />
     <Content Include="AdminFunction.aspx" />
+    <Content Include="AdminLogin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,12 +83,19 @@
     <Compile Include="AdminFunction.aspx.designer.cs">
       <DependentUpon>AdminFunction.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SuccessPage.aspx.cs">
-      <DependentUpon>SuccessPage.aspx</DependentUpon>
+    <Compile Include="SignupSuccessPage.aspx.cs">
+      <DependentUpon>SignupSuccessPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SuccessPage.aspx.designer.cs">
-      <DependentUpon>SuccessPage.aspx</DependentUpon>
+    <Compile Include="SignupSuccessPage.aspx.designer.cs">
+      <DependentUpon>SignupSuccessPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
