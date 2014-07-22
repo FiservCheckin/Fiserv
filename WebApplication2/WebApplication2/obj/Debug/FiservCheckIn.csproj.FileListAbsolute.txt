@@ -22,3 +22,9 @@ C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\WebAppl
 C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
 C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.dll
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.dll
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+C:\Users\qmv2643\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csproj.ResolveComReference.cache

@@ -56,7 +56,7 @@
                 <td class="auto-style2">
                     Export Data to Excel Sheet:</td>
                 <td>
-                    <asp:Button ID="Export" runat="server" Text="Export" />
+                    <asp:Button ID="Export" runat="server" Text="Export" OnClick="Export_Click" />
                 </td>
             </tr>
             <tr>
