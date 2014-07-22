@@ -66,6 +66,11 @@ namespace WebApplication2
 
             }
         }
+
+        protected void Fname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
