@@ -55,7 +55,7 @@ namespace WebApplication2
                 com.Parameters.AddWithValue("@linkedIn", LinkedIn.Text);
 
                 com.ExecuteNonQuery();
-                Response.Redirect("SuccessPage.aspx");
+                Response.Redirect("SignupSuccessPage.aspx");
                 
                                 
                 conn.Close();
