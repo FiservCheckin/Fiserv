@@ -15,11 +15,7 @@ namespace WebApplication2
         {
             if (IsPostBack)
             {
-                SqlConnection conn = new SqlConnection("user id=b31_14714192;" +
-                                       "password=danny123;server=sql106.byethost31.com;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=b31_14714192_assignment2; " +
-                                       "connection timeout=20");
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
                 //checks if email of the attendee already exist in database, if it exist it will not input
                 string checkEmail = "SELECT count(*) FROM Attendee WHERE Email ='"+Email.Text+"'";
@@ -40,11 +36,7 @@ namespace WebApplication2
         {
             try
             {
-                SqlConnection conn = new SqlConnection("user id=b31_14714192;" +
-                                       "password=danny123;server=sql106.byethost31.com;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=b31_14714192_assignment2; " +
-                                       "connection timeout=20");
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
                 //inserts the attendees inputs into the Attendee table in the database
                 string insertQuery = "insert into Attendee (CareerCode,FirstName, LastName,Email,PhoneNo,Degree,Major,GradMonth,GradYear,DreamRole,JobAvailability,LinkedIn) values(@careerCode,@fname,@lname,@email,@phoneNo,@degree,@major,@gradMonth,@gradYear,@dreamRole,@jobAvailability,@linkedIn)";
