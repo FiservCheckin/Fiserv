@@ -72,7 +72,7 @@
             <tr>
                 <td class="auto-style2">Degree:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="Degree" runat="server" Width="210px" OnSelectedIndexChanged="Degree_SelectedIndexChanged">
+                    <asp:DropDownList ID="Degree" runat="server" Width="210px">
                         <asp:ListItem>Select A Degree</asp:ListItem>
                         <asp:ListItem>Bachelor of Computer Science</asp:ListItem>
                         <asp:ListItem>Bachelor of Engineering</asp:ListItem>
