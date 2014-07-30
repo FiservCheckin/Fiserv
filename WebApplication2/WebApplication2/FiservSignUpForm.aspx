@@ -80,7 +80,7 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Degree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Degree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Degree"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -123,9 +123,9 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="GradMonth" ErrorMessage="Month Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="GradMonth" ErrorMessage="Month Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Month"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" ErrorMessage="Year Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" ErrorMessage="Year Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Year"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -143,7 +143,7 @@
                 <td class="auto-style2">Job Availability</td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="JobAvailability" runat="server">
-                        <asp:ListItem>Select An Job Availability</asp:ListItem>
+                        <asp:ListItem>Select Job Availability</asp:ListItem>
                         <asp:ListItem>Full Time</asp:ListItem>
                         <asp:ListItem>Part Time</asp:ListItem>
                         <asp:ListItem>Casual</asp:ListItem>
@@ -151,7 +151,7 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="JobAvailability" ErrorMessage="Job Availability Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="JobAvailability" ErrorMessage="Job Availability Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Job Availability"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
