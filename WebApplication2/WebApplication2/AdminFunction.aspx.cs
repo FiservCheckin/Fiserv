@@ -5,7 +5,7 @@ using System.Web;
 using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Excel = Microsoft.Office.Interop.Excel; 
+//using Excel = Microsoft.Office.Interop.Excel; 
 using System.Data.SqlClient;
 using Spire.Xls;
 using System.Configuration;
