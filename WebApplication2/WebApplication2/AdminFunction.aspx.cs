@@ -5,9 +5,14 @@ using System.Web;
 using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using Excel = Microsoft.Office.Interop.Excel; 
+using ExcelLibrary.SpreadSheet;
+using ExcelLibrary.CompoundDocumentFormat;
+using ExcelLibrary.BinaryDrawingFormat;
+using ExcelLibrary.BinaryFileFormat;
+using Excel = Microsoft.Office.Interop.Excel; 
 using System.Data.SqlClient;
-using Spire.Xls;
+using System.Windows.Forms;
+//using Spire.Xls;
 using System.Configuration;
 
 namespace WebApplication2
@@ -32,12 +37,24 @@ namespace WebApplication2
             command.CommandText = "select * from Attendee";
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
             {
-                DataTable t = new DataTable();
-                dataAdapter.Fill(t);
-                Workbook book = new Workbook();
-                Worksheet sheet = book.Worksheets[0];
-                sheet.InsertDataTable(t, true, 1, 1);
-                book.SaveToFile("ToExcel.xls");         
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                BindingSource bSource = new BindingSource();
+
+                bSource.DataSource = dt;
+                dataAdapter.Update(dt);
+
+                DataSet ds = new DataSet("New_Dataset");
+                ds.Locale = System.Threading.Thread.CurrentThread.CurrentCulture;
+                dataAdapter.Fill(dt);
+                ds.Tables.Add(dt);
+                ExcelLibrary.DataSetHelper.CreateWorkbook("ToExcel.xls", ds);
+                
+
+                //Workbook book = new Workbook();
+                //Worksheet sheet = book.Worksheets[0];
+                //sheet.InsertDataTable(t, true, 1, 1);
+                //book.SaveToFile("ToExcel.xls");         
             };
             
         }
