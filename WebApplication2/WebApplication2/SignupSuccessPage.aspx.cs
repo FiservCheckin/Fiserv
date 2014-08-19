@@ -18,5 +18,11 @@ namespace WebApplication2
         {
             Response.Redirect("FiservSignUpForm.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+            ClientScript.RegisterStartupScript(typeof(Page),"closePage","window.close();", true);
+        }
     }
 }

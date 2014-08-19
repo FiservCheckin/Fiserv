@@ -21,11 +21,15 @@
     </div>
         <table class="auto-style1">
             <tr>
-                <td>Thank You for Signing up for Fiserv! your application has been submitted</td>
+                <td>Thanks for singingup for Fiserv! Your application has been submitted successfully.<br />
+                    For more information about Fiserv, you can go to our website: <a href="http://jobs.fiserv.co.nz/">http://jobs.fiserv.co.nz/</a>.<br />
+                    Or you can click the button to close the window.<br />
+                </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="Return" runat="server" OnClick="Return_Click" Text="Return To Form" />
+                    <asp:Button ID="Return" runat="server" OnClick="Return_Click" Text="Return To Form" Width="111px" />
+                    <asp:Button ID="closeBtn" runat="server" OnClick="Button1_Click" style="margin-left: 57px" Text="Close" Width="92px" />
                 </td>
             </tr>
         </table>
