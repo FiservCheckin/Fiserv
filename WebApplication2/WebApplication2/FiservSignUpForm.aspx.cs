@@ -39,20 +39,18 @@ namespace WebApplication2
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
                 //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "insert into Attendee (CareerCode,FirstName, LastName,Email,PhoneNo,Degree,Major,GradMonth,GradYear,DreamRole,JobAvailability,LinkedIn) values(@careerCode,@fname,@lname,@email,@phoneNo,@degree,@major,@gradMonth,@gradYear,@dreamRole,@jobAvailability,@linkedIn)";
+                string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,Degree,Major,GradSem,GradYear,Role) values(@fname,@lname,@email,@phoneNo,@degree,@major,@gradSem,@gradYear,@Role)";
                 SqlCommand com = new SqlCommand(insertQuery, conn);
-                com.Parameters.AddWithValue("@careerCode", CareerCode.Text);
                 com.Parameters.AddWithValue("@fname", Fname.Text);
                 com.Parameters.AddWithValue("@lname", Lname.Text);
                 com.Parameters.AddWithValue("@email", Email.Text);
                 com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
                 com.Parameters.AddWithValue("@degree", Degree.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@major", Major.Text);
-                com.Parameters.AddWithValue("@gradMonth", GradMonth.SelectedItem.ToString());
+                com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@dreamRole", DreamRole.Text);
-                com.Parameters.AddWithValue("@JobAvailability", JobAvailability.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@linkedIn", LinkedIn.Text);
+                com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
+                
 
                 com.ExecuteNonQuery();
                 Response.Redirect("SignupSuccessPage.aspx");
