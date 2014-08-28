@@ -21,7 +21,13 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                SqlDataSource1.SelectCommand = @"
+                    SELECT a.*, dm.DegreeName, dm.MajorName
+                    FROM [Attendee] a
+                        OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm";
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -20,6 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" style="text-align: center" Text="Fiserv Career Fair Sign up Form"></asp:Label>
@@ -67,31 +68,33 @@
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="PhoneNo" ErrorMessage="Invalid Number" Font-Italic="True" ForeColor="Red" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style2">Degree:</td>
-                <td class="auto-style3">
-                    <asp:DropDownList ID="Degree" runat="server" Width="210px">
-                        <asp:ListItem>Select A Degree</asp:ListItem>
-                        <asp:ListItem>Bachelor of Computer Science</asp:ListItem>
-                        <asp:ListItem>Bachelor of Engineering</asp:ListItem>
-                        <asp:ListItem>Bachelor of Business</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Degree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Degree"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">Major</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="Major" runat="server" Width="206px"></asp:TextBox>
-                </td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Major" ErrorMessage="Major Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <br />
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="Major" ErrorMessage="Invalid Characters" Font-Italic="True" ForeColor="Red" ValidationExpression="^[A-Za-z ]+$"></asp:RegularExpressionValidator>
-                </td>
-            </tr>
+            <asp:UpdatePanel ID="upMajorPickPane" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <tr>
+                        <td class="auto-style2">Degree:</td>
+                        <td class="auto-style3">
+                            <asp:DropDownList ID="ddlDegree" runat="server" Width="210px" OnSelectedIndexChanged="ddlDegree_SelectedIndexChanged" AutoPostBack="true">
+                                <asp:ListItem>Select A Degree</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlDegree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Degree" EnableClientScript="true"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">Major</td>
+                        <td class="auto-style3">
+                            <asp:DropDownList ID="ddlMajor" runat="server" Height="20px" style="margin-top: 8px" Width="209px">
+                                <asp:ListItem>What is your major studied?</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlMajor" ErrorMessage="Major Is Required" Font-Italic="True" ForeColor="Red" InitialValue="What is your major studied?" EnableClientScript="true"></asp:RequiredFieldValidator>
+                            <br />
+                        </td>
+                    </tr>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <tr>
                 <td class="auto-style2">Graduation Year:</td>
                 <td class="auto-style3">
@@ -111,9 +114,9 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="GradSem" ErrorMessage="Semester Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Month"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="GradSem" EnableClientScript="true" ErrorMessage="Semester Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Semester"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" ErrorMessage="Year Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Year"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" EnableClientScript="true" ErrorMessage="Year Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Year"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -126,7 +129,7 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="Role" ErrorMessage="Role Is Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="Role" EnableClientScript="true" ErrorMessage="Role Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Role"></asp:RequiredFieldValidator>
                     <br />
                 </td>
             </tr>

@@ -20,23 +20,23 @@
         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" style="text-align: center; margin-top: 0px" Text="Fiserv Admin" Width="500px"></asp:Label>
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT * FROM [Attendee]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand=""></asp:SqlDataSource>
     
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="CareerCode" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="AttendeeId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="CareerCode" HeaderText="CareerCode" ReadOnly="True" SortExpression="CareerCode" />
+                            <%--<asp:BoundField DataField="CareerCode" HeaderText="CareerCode" ReadOnly="True" SortExpression="CareerCode" />--%>
                             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
                             <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
                             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                             <asp:BoundField DataField="PhoneNo" HeaderText="PhoneNo" SortExpression="PhoneNo" />
-                            <asp:BoundField DataField="Degree" HeaderText="Degree" SortExpression="Degree" />
-                            <asp:BoundField DataField="Major" HeaderText="Major" SortExpression="Major" />
-                            <asp:BoundField DataField="GradMonth" HeaderText="GradMonth" SortExpression="GradMonth" />
+                            <asp:BoundField DataField="DegreeName" HeaderText="Degree" SortExpression="DegreeName" />
+                            <asp:BoundField DataField="MajorName" HeaderText="Major" SortExpression="MajorName" />
+                            <asp:BoundField DataField="GradSem" HeaderText="GradSem" SortExpression="GradSem" />
                             <asp:BoundField DataField="GradYear" HeaderText="GradYear" SortExpression="GradYear" />
-                            <asp:BoundField DataField="DreamRole" HeaderText="DreamRole" SortExpression="DreamRole" />
-                            <asp:BoundField DataField="JobAvailability" HeaderText="JobAvailability" SortExpression="JobAvailability" />
-                            <asp:BoundField DataField="LinkedIn" HeaderText="LinkedIn" SortExpression="LinkedIn" />
+                            <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
+                            <%--<asp:BoundField DataField="JobAvailability" HeaderText="JobAvailability" SortExpression="JobAvailability" />--%>
+                            <%--<asp:BoundField DataField="LinkedIn" HeaderText="LinkedIn" SortExpression="LinkedIn" />--%>
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
