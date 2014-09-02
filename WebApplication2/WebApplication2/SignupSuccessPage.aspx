@@ -23,7 +23,7 @@
             <tr>
                 <td>Thanks for singingup for Fiserv! Your application has been submitted successfully.<br />
                     For more information about Fiserv, you can go to our website: <a href="http://jobs.fiserv.co.nz/">http://jobs.fiserv.co.nz/</a>.<br />
-                    Or you can click the button to close the window.<br />
+                    Or click the button below to either return to the form or close the window.<br />
                 </td>
             </tr>
             <tr>

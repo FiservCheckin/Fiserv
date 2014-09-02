@@ -64,6 +64,10 @@ namespace WebApplication2
             };
             
         }
+        protected void changePwBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ChangePassword.aspx");
+        }
        
     }
 }
