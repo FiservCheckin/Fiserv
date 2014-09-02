@@ -62,7 +62,7 @@
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-            <asp:Button ID="Button1" runat="server" Text="Click to reset password" OnClick="changePwBtn_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Click to reset password"/>
                 </td>
             </tr>
         </table>
