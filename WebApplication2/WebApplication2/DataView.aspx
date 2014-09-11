@@ -65,7 +65,7 @@
             <tr>
                 <td class="auto-style2">Clear Database</td>
                 <td>
-                    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" onclientclick="return confirm('Do you want to delete this record?');"/>
+                    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" onclientclick="return confirm('Do you want to delete all the data?');" Height="26px"/>
                 </td>
             </tr>
         </table>

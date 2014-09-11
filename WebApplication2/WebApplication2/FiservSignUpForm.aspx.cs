@@ -65,6 +65,7 @@ namespace WebApplication2
                 com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
+                com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
 
                 com.ExecuteNonQuery();
                 Response.Redirect("SignupSuccessPage.aspx");
