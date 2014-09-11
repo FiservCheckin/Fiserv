@@ -71,8 +71,16 @@ namespace WebApplication2
 
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "Alert", "alert('Add button clicked');", true);
 
+            ClientScriptManager CSM = Page.ClientScript;
+            
+            if (!ReturnValue())
+            {
+                string strconfirm = "<script>if(!window.confirm('Are you sure?')){window.location.href='Default.aspx'}</script>";
+                CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
+            }
+            
+            
             
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();

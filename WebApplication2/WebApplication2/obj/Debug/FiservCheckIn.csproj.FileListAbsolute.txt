@@ -80,3 +80,5 @@ C:\Users\twk4999\Desktop\0911\WebApplication2\WebApplication2\bin\Spire.License.
 C:\Users\twk4999\Desktop\0911\WebApplication2\WebApplication2\bin\Spire.Common.xml
 C:\Users\twk4999\Desktop\0911\WebApplication2\WebApplication2\bin\Spire.XLS.xml
 C:\Users\twk4999\Desktop\0911\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
+E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
