@@ -49,36 +49,44 @@ namespace WebApplication2
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
-
-            try
+            if(WebForm5.flag == true)
             {
-                conn.Open();
-                //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId)";
-                SqlCommand com = new SqlCommand(insertQuery, conn);
-                com.Parameters.AddWithValue("@fname", Fname.Text);
-                com.Parameters.AddWithValue("@lname", Lname.Text);
-                com.Parameters.AddWithValue("@email", Email.Text);
-                com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
-                com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
-                com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
 
-                com.ExecuteNonQuery();
-                Response.Redirect("SignupSuccessPage.aspx");
+                try
+                {
+                    conn.Open();
+                    //inserts the attendees inputs into the Attendee table in the database
+                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId)";
+                    SqlCommand com = new SqlCommand(insertQuery, conn);
+                    com.Parameters.AddWithValue("@fname", Fname.Text);
+                    com.Parameters.AddWithValue("@lname", Lname.Text);
+                    com.Parameters.AddWithValue("@email", Email.Text);
+                    com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
+                    com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
+                    //com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
 
-            }
-            catch (Exception ex)
-            {
+                    com.ExecuteNonQuery();
+                    Response.Redirect("SignupSuccessPage.aspx");
+
+                }
+                catch (Exception ex)
+                {
                 Response.Write("Error:" + ex.ToString());
-            }
-            finally
-            {
+                }
+                finally
+                {
                 conn.Close();
+                }
             }
+            else
+            {
+                Response.Redirect("ClosedForm.aspx");
+            }
+
         }
         protected DataTable GetAllDegrees()
         {

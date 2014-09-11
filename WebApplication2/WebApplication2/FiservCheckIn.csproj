@@ -85,6 +85,7 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminFunction.aspx" />
     <Content Include="ChangeWelcomeMessage.aspx" />
+    <Content Include="ClosedForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChangePassword.aspx.cs">
@@ -136,6 +137,13 @@
     </Compile>
     <Compile Include="ChangeWelcomeMessage.aspx.designer.cs">
       <DependentUpon>ChangeWelcomeMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClosedForm.aspx.cs">
+      <DependentUpon>ClosedForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClosedForm.aspx.designer.cs">
+      <DependentUpon>ClosedForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
