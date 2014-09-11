@@ -1,73 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminFunction.aspx.cs" Inherits="WebApplication2.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminFunction.aspx.cs" Inherits="WebApplication2.WebForm5" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 307px;
-            text-align: right;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <p>
         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" style="text-align: center; margin-top: 0px" Text="Fiserv Admin" Width="500px"></asp:Label>
+        </p>
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand=""></asp:SqlDataSource>
-    
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="AttendeeId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <%--<asp:BoundField DataField="CareerCode" HeaderText="CareerCode" ReadOnly="True" SortExpression="CareerCode" />--%>
-                            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-                            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
-                            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                            <asp:BoundField DataField="PhoneNo" HeaderText="PhoneNo" SortExpression="PhoneNo" />
-                            <asp:BoundField DataField="DegreeName" HeaderText="Degree" SortExpression="DegreeName" />
-                            <asp:BoundField DataField="MajorName" HeaderText="Major" SortExpression="MajorName" />
-                            <asp:BoundField DataField="GradSem" HeaderText="GradSem" SortExpression="GradSem" />
-                            <asp:BoundField DataField="GradYear" HeaderText="GradYear" SortExpression="GradYear" />
-                            <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
-                            <%--<asp:BoundField DataField="JobAvailability" HeaderText="JobAvailability" SortExpression="JobAvailability" />--%>
-                            <%--<asp:BoundField DataField="LinkedIn" HeaderText="LinkedIn" SortExpression="LinkedIn" />--%>
-                        </Columns>
-                        <EditRowStyle BackColor="#2461BF" />
-                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EFF3FB" />
-                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                    </asp:GridView>
+            <asp:Button ID="changePwsBtn" runat="server" Text="Click to reset password" OnClick="Button1_Click"/>
+                &nbsp;
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Change Welcome Message" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="View Attendee Data" />
     
     </div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">
-                    Export Data to Excel Sheet:</td>
-                <td>
-                    <asp:Button ID="Export" runat="server" Text="Export" OnClick="Export_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td>
-            <asp:Button ID="Button1" runat="server" Text="Click to reset password"/>
-                </td>
-            </tr>
-        </table>
-        <p>
-            &nbsp;</p>
+    <div>
+    
+    </div>
     </form>
 </body>
 </html>

@@ -77,13 +77,23 @@
     <Content Include="App_Data\FiservDatabase_log.ldf">
       <DependentUpon>FiservDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="ChangePassword.aspx" />
     <Content Include="SignupSuccessPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="FiservSignUpForm.aspx" />
-    <Content Include="AdminFunction.aspx" />
+    <Content Include="DataView.aspx" />
     <Content Include="AdminLogin.aspx" />
+    <Content Include="AdminFunction.aspx" />
+    <Content Include="ChangeWelcomeMessage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FiservSignUpForm.aspx.cs">
       <DependentUpon>FiservSignUpForm.aspx</DependentUpon>
@@ -92,12 +102,12 @@
     <Compile Include="FiservSignUpForm.aspx.designer.cs">
       <DependentUpon>FiservSignUpForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminFunction.aspx.cs">
-      <DependentUpon>AdminFunction.aspx</DependentUpon>
+    <Compile Include="DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminFunction.aspx.designer.cs">
-      <DependentUpon>AdminFunction.aspx</DependentUpon>
+    <Compile Include="DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignupSuccessPage.aspx.cs">
       <DependentUpon>SignupSuccessPage.aspx</DependentUpon>
@@ -112,6 +122,20 @@
     </Compile>
     <Compile Include="AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFunction.aspx.cs">
+      <DependentUpon>AdminFunction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFunction.aspx.designer.cs">
+      <DependentUpon>AdminFunction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeWelcomeMessage.aspx.cs">
+      <DependentUpon>ChangeWelcomeMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeWelcomeMessage.aspx.designer.cs">
+      <DependentUpon>ChangeWelcomeMessage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

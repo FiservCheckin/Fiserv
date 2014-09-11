@@ -14,6 +14,7 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            welcomeMsg.Text = WebForm6.welcomeMsg;
             if (IsPostBack)
             {
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
