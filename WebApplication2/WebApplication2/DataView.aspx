@@ -13,6 +13,12 @@
             width: 307px;
             text-align: right;
         }
+        .auto-style3 {
+            width: 27px;
+        }
+        .auto-style4 {
+            width: 145px;
+        }
     </style>
 </head>
 <body>
@@ -56,17 +62,31 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
-                    Export Data to Excel Sheet:</td>
-                <td>
-                    <asp:Button ID="Export" runat="server" Text="Export" OnClick="Export_Click" />
+                    Export All Data to Excel Sheet:</td>
+                <td class="auto-style3">
+                    <br />
+                    <asp:Button ID="Export" runat="server" Text="Export" OnClick="Export_Click" style="text-align: left" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
+                <td class="auto-style4">
+                    Export
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">Clear Database</td>
-                <td>
+                <td class="auto-style3">
                     <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" onclientclick="return confirm('Do you want to delete all the data?');" Height="26px"/>
                 </td>
+                <td class="auto-style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
             </tr>
         </table>
         <p>

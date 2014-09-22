@@ -128,8 +128,16 @@
                 <td class="auto-style3">
                     <asp:DropDownList ID="Role" runat="server" Width="210px">
                         <asp:ListItem>Select A Role</asp:ListItem>
-                        <asp:ListItem>Developer</asp:ListItem>
+                        <asp:ListItem>Software Developer</asp:ListItem>
+                        <asp:ListItem>Software Architect</asp:ListItem>
+                        <asp:ListItem>QA Test Analyst</asp:ListItem>
+                        <asp:ListItem>Test Engineer</asp:ListItem>
+                        <asp:ListItem>Systems Administrator</asp:ListItem>
+                        <asp:ListItem>Application Support Specialist</asp:ListItem>
+                        <asp:ListItem>User Experience Designer</asp:ListItem>
+                        <asp:ListItem>Project Manager</asp:ListItem>
                         <asp:ListItem>Business Analyst</asp:ListItem>
+                        <asp:ListItem>Scrum Master</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
