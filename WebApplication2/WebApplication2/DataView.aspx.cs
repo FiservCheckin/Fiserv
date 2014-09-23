@@ -12,8 +12,9 @@ using ExcelLibrary.BinaryFileFormat;
 using Excel = Microsoft.Office.Interop.Excel; 
 using System.Data.SqlClient;
 using System.Windows.Forms;
-//using Spire.Xls;
+using Spire.Xls;
 using System.Configuration;
+using System.Data.OleDb;
 
 namespace WebApplication2
 {
@@ -50,20 +51,24 @@ namespace WebApplication2
                 bSource.DataSource = dt;
                 dataAdapter.Update(dt);
 
-                DataSet ds = new DataSet("New_Dataset");
-                ds.Locale = System.Threading.Thread.CurrentThread.CurrentCulture;
-                dataAdapter.Fill(dt);
-                ds.Tables.Add(dt);
-                ExcelLibrary.DataSetHelper.CreateWorkbook("ToExcel.xls", ds);
-                
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                //Workbook book = new Workbook();
-                //Worksheet sheet = book.Worksheets[0];
-                //sheet.InsertDataTable(t, true, 1, 1);
-                //book.SaveToFile("ToExcel.xls");         
+                Spire.Xls.Workbook book = new Spire.Xls.Workbook();
+                Spire.Xls.Worksheet sheet = book.Worksheets[0];
+                sheet.InsertDataTable(dt, true, 1, 1);
+                //book.SaveToFile("C:\\Users\\Desktop\\ToExcel.xls");
+                book.SaveToFile(path + "\\ToExcel.xls");
+                //    DataSet ds = new DataSet("New_Dataset");
+                //    ds.Locale = System.Threading.Thread.CurrentThread.CurrentCulture;
+                //    dataAdapter.Fill(dt);
+                //    ds.Tables.Add(dt);
+                //    ExcelLibrary.DataSetHelper.CreateWorkbook("attendee.xls", ds);
+
             };
-            
+
+
         }
+        
         protected void changePwBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("ChangePassword.aspx");
