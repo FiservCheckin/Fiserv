@@ -14,10 +14,13 @@
             text-align: right;
         }
         .auto-style3 {
-            width: 27px;
+            width: 94px;
         }
-        .auto-style4 {
-            width: 145px;
+        .auto-style5 {
+            width: 136px;
+        }
+        .auto-style6 {
+            width: 83px;
         }
     </style>
 </head>
@@ -65,25 +68,27 @@
                     Export All Data to Excel Sheet:</td>
                 <td class="auto-style3">
                     <br />
-                    <asp:Button ID="Export" runat="server" Text="Export" OnClick="Export_Click" style="text-align: left" />
+                    <asp:Button ID="Export" runat="server" Text="Export All" OnClick="Export_Click" style="text-align: left" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
-                <td class="auto-style4">
+                <td class="auto-style6">
                     Export
                 </td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="ExportText" runat="server" Height="22px" style="margin-left: 0px" Width="135px"></asp:TextBox>
+                </td>
                 <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                    <asp:Button ID="ExportRole" runat="server" OnClick="ExportRole_Click" Text="Export" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style2">Clear Database</td>
                 <td class="auto-style3">
                     <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" onclientclick="return confirm('Do you want to delete all the data?');" Height="26px"/>
                 </td>
-                <td class="auto-style4">
+                <td class="auto-style6">
                     &nbsp;</td>
-                <td>
+                <td class="auto-style5">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>

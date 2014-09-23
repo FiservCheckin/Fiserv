@@ -58,6 +58,24 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Button Export;
         
         /// <summary>
+        /// ExportText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ExportText;
+        
+        /// <summary>
+        /// ExportRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ExportRole;
+        
+        /// <summary>
         /// deleteBtn control.
         /// </summary>
         /// <remarks>
