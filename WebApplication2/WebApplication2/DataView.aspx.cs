@@ -88,16 +88,16 @@ namespace WebApplication2
 
         }
 
-        public static String exportText;
+      
         protected void ExportRole_Click(object sender, EventArgs e)
         {
-            exportText = ExportText.Text;
+           String exportText = ExportText.Text;
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.Text;
-            command.CommandText = "select * from Attendee where Role = " + exportText;
+            //command.CommandType = CommandType.Text;
+            command.CommandText = "select * from Attendee where Role = " + "'" + exportText + "'"; 
            
            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
             {
@@ -117,5 +117,6 @@ namespace WebApplication2
             }
 
         }
+
     }
 }
