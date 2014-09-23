@@ -55,13 +55,13 @@ namespace WebApplication2
             {
                 conn.Open();
                 //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId)";
+                string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId,@InputTime)";
                 
                 //insert time stamp
                // string inputTimeStamp = "insert into Attendee (InputTime) values (TO_TIMESTAMP(:ts_val, 'YYYY-MM-DD HH24:MI:SS'));
                 //execute the querys
                 SqlCommand com = new SqlCommand(insertQuery, conn);
-              //  SqlCommand com1 = new SqlCommand(inputTimeStamp, conn);
+             
                 com.Parameters.AddWithValue("@fname", Fname.Text);
                 com.Parameters.AddWithValue("@lname", Lname.Text);
                 com.Parameters.AddWithValue("@email", Email.Text);
@@ -70,10 +70,9 @@ namespace WebApplication2
                 com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
-                com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
-                //com.Parameters.AddWithValue("@InputTime", "dahdhau")
+                com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
                 com.ExecuteNonQuery();
-               // com1.ExecuteNonQuery();
+
                 Response.Redirect("SignupSuccessPage.aspx");
 
             }
