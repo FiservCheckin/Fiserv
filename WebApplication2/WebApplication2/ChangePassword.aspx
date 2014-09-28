@@ -20,6 +20,9 @@
             <asp:Label ID="Label2" runat="server"></asp:Label>
         </p>
         <p>
+            <asp:Label ID="Label5" runat="server" Text="*Password contains numbers and letters*"></asp:Label>
+        </p>
+        <p>
             <asp:Label ID="Label1" runat="server" Text="Confirm New Password: "></asp:Label>
             <asp:TextBox ID="TextBox3" runat="server" Height="20px" Width="200px" BorderStyle="Double" TextMode="Password"></asp:TextBox>
             <asp:Label ID="Label3" runat="server"></asp:Label>

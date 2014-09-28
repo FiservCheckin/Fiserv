@@ -42,14 +42,14 @@ namespace WebApplication2
         protected Boolean correctPsw()
         {
             Boolean correct = false;
-            String currentPsw = TextBox1.Text;
+            //String currentPsw = TextBox1.Text;
             try
             {
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
 
                 System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-                byte[] bs = System.Text.Encoding.UTF8.GetBytes(currentPsw);
+                byte[] bs = System.Text.Encoding.UTF8.GetBytes(TextBox1.Text);
                 bs = x.ComputeHash(bs);
                 System.Text.StringBuilder s = new System.Text.StringBuilder();
                 foreach (byte b in bs)
@@ -65,12 +65,25 @@ namespace WebApplication2
 
                 string psw = com.ExecuteScalar().ToString();
 
-                conn.Close();
-
                 if (psw == inputpsw)
                 {
                     correct = true;
+
+                    System.Security.Cryptography.MD5CryptoServiceProvider x1 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                    byte[] bs1 = System.Text.Encoding.UTF8.GetBytes(TextBox2.Text);
+                    bs1 = x1.ComputeHash(bs1);
+                    System.Text.StringBuilder s1 = new System.Text.StringBuilder();
+                    foreach (byte b in bs1)
+                    {
+                        s1.Append(b.ToString("x2").ToLower());
+                    }
+                    var newPSW = s1.ToString();
+
+                    string replacePWQuery = "UPDATE PW SET PW = " + "'" + newPSW + "'" + "WHERE PW = " + "'" + psw + "';";
+                    SqlCommand comm = new SqlCommand(replacePWQuery, conn);
+                    comm.ExecuteNonQuery();
                 }
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -87,9 +100,9 @@ namespace WebApplication2
             if(CheckMatch())
             {
                 Label3.Text = "";
-                if (correctPsw())
+               if (correctPsw())
                {
-                   Response.Write("new password has been saved");
+                   Response.Write("***New password has been saved***");
                }
                else{
                    Label4.Text = "Wrong password";
