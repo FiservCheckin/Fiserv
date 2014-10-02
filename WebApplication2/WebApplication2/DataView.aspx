@@ -106,7 +106,12 @@
             <tr>
                 <td class="auto-style7">Clear Database</td>
                 <td class="auto-style8">
-                    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" onclientclick="return confirm('Do you want to delete all the data?');" Height="26px"/>
+                    <asp:Label ID="Label2" runat="server" Text="Password required for data deletion"></asp:Label>
+            <asp:TextBox ID="pswdTextBox" runat="server" BorderStyle="Double" Font-Bold="False" Font-Italic="False" Font-Strikeout="False" ForeColor="Black" Height="20px" TextMode="Password" Width="200px"></asp:TextBox>
+                    <br />
+                    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" 
+                        
+                        Height="26px"/>
                 </td>
                 <td class="auto-style9">
                     </td>

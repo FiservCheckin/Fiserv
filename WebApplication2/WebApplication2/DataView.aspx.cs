@@ -56,9 +56,7 @@ namespace WebApplication2
                 Spire.Xls.Workbook book = new Spire.Xls.Workbook();
                 Spire.Xls.Worksheet sheet = book.Worksheets[0];
                 sheet.InsertDataTable(dt, true, 1, 1);
-                book.SaveToFile(path + "\\ToExcel.xls");
-
-
+                book.SaveToFile(path + "\\AllAttendeeDetails.xls");
             };
 
 
@@ -71,21 +69,39 @@ namespace WebApplication2
 
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
-
-
-
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();
+            string getpswsql = "SELECT * FROM PW";
+            SqlCommand psdcmd = new SqlCommand(getpswsql, conn);
+            
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.UTF8.GetBytes(pswdTextBox.Text);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2").ToLower());
+            }
 
-            string sql = @"DELETE FROM Attendee";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
+            string pswInDB = psdcmd.ExecuteScalar().ToString();
+
+            if (s.ToString() == pswInDB)
+            {
+                string dltsql = @"DELETE FROM Attendee";
+            
+                SqlCommand dltcmd = new SqlCommand(dltsql, conn);
+                dltcmd.ExecuteNonQuery();
+            }
+            else
+            {
+
+                MessageBox.Show("Incorrect password, please try again", "Incorrect password",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             conn.Close();
 
             Response.Redirect("DataView.aspx");
-
-
-
         }
 
       
@@ -96,7 +112,6 @@ namespace WebApplication2
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();
             SqlCommand command = new SqlCommand();
-            //command.CommandType = CommandType.Text;
             command.CommandText = "select * from Attendee where Role = " + "'" + exportText + "'"; 
            
            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
@@ -113,10 +128,8 @@ namespace WebApplication2
                 Spire.Xls.Workbook book = new Spire.Xls.Workbook();
                 Spire.Xls.Worksheet sheet = book.Worksheets[0];
                 sheet.InsertDataTable(dt, true, 1, 1);
-                book.SaveToFile(path + "\\ToExcel.xls");
+                book.SaveToFile(path + "\\" + exportText + "AttendeeDetails.xls");
             }
-
         }
-
     }
 }

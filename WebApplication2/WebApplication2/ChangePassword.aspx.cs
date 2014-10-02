@@ -42,7 +42,6 @@ namespace WebApplication2
         protected Boolean correctPsw()
         {
             Boolean correct = false;
-            //String currentPsw = TextBox1.Text;
             try
             {
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
@@ -57,15 +56,11 @@ namespace WebApplication2
                     s.Append(b.ToString("x2").ToLower());
                 }
 
-                var inputpsw = s.ToString();
+                string getpswsql = "select * from PW";
 
-                string pullPWQuery = "select * from PW";
+                SqlCommand com = new SqlCommand(getpswsql, conn);
 
-                SqlCommand com = new SqlCommand(pullPWQuery, conn);
-
-                string psw = com.ExecuteScalar().ToString();
-
-                if (psw == inputpsw)
+                if (com.ExecuteScalar().ToString() == s.ToString())
                 {
                     correct = true;
 
@@ -79,9 +74,13 @@ namespace WebApplication2
                     }
                     var newPSW = s1.ToString();
 
-                    string replacePWQuery = "UPDATE PW SET PW = " + "'" + newPSW + "'" + "WHERE PW = " + "'" + psw + "';";
+                    string replacePWQuery = "UPDATE PW SET PW = " + "'" + newPSW + "'" + "WHERE PW = " + "'" + com.ExecuteScalar().ToString() + "';";
                     SqlCommand comm = new SqlCommand(replacePWQuery, conn);
                     comm.ExecuteNonQuery();
+                }
+                else
+                {
+
                 }
                 conn.Close();
             }

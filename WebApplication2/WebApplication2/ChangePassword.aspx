@@ -20,7 +20,7 @@
             <asp:Label ID="Label2" runat="server"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="Label5" runat="server" Text="*Password contains numbers and letters*"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="*Password only contains numbers and letters*"></asp:Label>
         </p>
         <p>
             <asp:Label ID="Label1" runat="server" Text="Confirm New Password: "></asp:Label>
