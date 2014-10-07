@@ -89,3 +89,12 @@ E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\bin\Spire.Li
 E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\bin\Spire.Common.xml
 E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\bin\Spire.XLS.xml
 E:\y3 s2\R & D Project\project file\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\Spire.License.dll
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\Spire.Common.xml
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\twk4999\Desktop\1007\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
