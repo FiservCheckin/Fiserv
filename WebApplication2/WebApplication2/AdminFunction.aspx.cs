@@ -10,9 +10,18 @@ namespace WebApplication2
     public partial class WebForm5 : System.Web.UI.Page
     {
         public static Boolean flag;
+        public static string statusText;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            statusLbl.Text = statusText;
+            if (statusText == "The sign up form is active")
+            {
+                RadioButton1.Checked = true;
+            }
+            else if (statusText == "The sign up form is inactive")
+            {
+                RadioButton2.Checked = true;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -41,11 +50,13 @@ namespace WebApplication2
             {
                 flag = true;
                 statusLbl.Text = "The sign up form is active";
+                statusText = statusLbl.Text;
             }
             else if (RadioButton2.Checked)
             {
                 flag = false;
                 statusLbl.Text = "The sign up form is inactive";
+                statusText = statusLbl.Text;
             }
         } 
        
