@@ -50,40 +50,46 @@ namespace WebApplication2
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
-
-            try
+            if (WebForm5.flag == true)
             {
-                conn.Open();
-                //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId,@InputTime)";
-                
-                //insert time stamp
-               // string inputTimeStamp = "insert into Attendee (InputTime) values (TO_TIMESTAMP(:ts_val, 'YYYY-MM-DD HH24:MI:SS'));
-                //execute the querys
-                SqlCommand com = new SqlCommand(insertQuery, conn);
-             
-                com.Parameters.AddWithValue("@fname", Fname.Text);
-                com.Parameters.AddWithValue("@lname", Lname.Text);
-                com.Parameters.AddWithValue("@email", Email.Text);
-                com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
-                com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
-                com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
-                com.ExecuteNonQuery();
+                try
+                {
+                    conn.Open();
+                    //inserts the attendees inputs into the Attendee table in the database
+                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId,@InputTime)";
 
-                Response.Redirect("SignupSuccessPage.aspx");
+                    //insert time stamp
+                    // string inputTimeStamp = "insert into Attendee (InputTime) values (TO_TIMESTAMP(:ts_val, 'YYYY-MM-DD HH24:MI:SS'));
+                    //execute the querys
+                    SqlCommand com = new SqlCommand(insertQuery, conn);
 
-            }
-            catch (Exception ex)
+                    com.Parameters.AddWithValue("@fname", Fname.Text);
+                    com.Parameters.AddWithValue("@lname", Lname.Text);
+                    com.Parameters.AddWithValue("@email", Email.Text);
+                    com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
+                    com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
+                    com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
+                    com.ExecuteNonQuery();
+
+                    Response.Redirect("SignupSuccessPage.aspx");
+
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("Error:" + ex.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }else if(WebForm5.flag == false)
             {
-                Response.Write("Error:" + ex.ToString());
+                Response.Redirect("ClosedForm.aspx");
             }
-            finally
-            {
-                conn.Close();
-            }
+           
         }
         protected DataTable GetAllDegrees()
         {

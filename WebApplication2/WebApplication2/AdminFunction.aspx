@@ -43,13 +43,14 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Active" />
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
                     <asp:Button ID="returnBtn" runat="server" OnClick="returnBtn_Click" Text="return to the form" />
+                    <br />
+                    <asp:RadioButton ID="RadioButton1" runat="server" Text="active" GroupName="livetime" />
+                    <asp:RadioButton ID="RadioButton2" runat="server" Text="inactive" GroupName="livetime" />
+&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="submit" />
+                    <br />
+                    <asp:Label ID="statusLbl" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>
