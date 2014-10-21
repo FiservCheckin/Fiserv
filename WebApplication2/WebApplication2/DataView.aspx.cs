@@ -41,7 +41,10 @@ namespace WebApplication2
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select * from Attendee";
+            command.CommandText = @"
+                SELECT a.AttendeeId, a.InputTime, a.FirstName, a.LastName, a.Email, a.PhoneNo, a.GradSem, a.GradYear, a.Role, dm.DegreeName, dm.MajorName
+                FROM [Attendee] a
+                    OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm";
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
             {
                 DataTable dt = new DataTable();
@@ -107,28 +110,42 @@ namespace WebApplication2
       
         protected void ExportRole_Click(object sender, EventArgs e)
         {
-           String exportText = ExportText.Text;
+            String exportText = ExportText.Text;
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
-            conn.Open();
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "select * from Attendee where Role = " + "'" + exportText + "'"; 
-           
-           using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
+
+            try
             {
-                DataTable dt = new DataTable();
-                dataAdapter.Fill(dt);
-                BindingSource bSource = new BindingSource();
+                conn.Open();
+                SqlCommand command = new SqlCommand();
+                command.CommandText = @"
+                SELECT a.AttendeeId, a.InputTime, a.FirstName, a.LastName, a.Email, a.PhoneNo, a.GradSem, a.GradYear, a.Role, dm.DegreeName, dm.MajorName
+                FROM [Attendee] a
+                    OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm
+                WHERE a.Role = @Role";
+                command.Parameters.AddWithValue("@Role", ExportText.Text);
 
-                bSource.DataSource = dt;
-                dataAdapter.Update(dt);
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                {
+                    dataAdapter.SelectCommand.Connection = conn;
+                    DataTable dt = new DataTable();
+                    dataAdapter.Fill(dt);
+                    BindingSource bSource = new BindingSource();
 
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    bSource.DataSource = dt;
+                    dataAdapter.Update(dt);
 
-                Spire.Xls.Workbook book = new Spire.Xls.Workbook();
-                Spire.Xls.Worksheet sheet = book.Worksheets[0];
-                sheet.InsertDataTable(dt, true, 1, 1);
-                book.SaveToFile(path + "\\" + exportText + "AttendeeDetails.xls");
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    Spire.Xls.Workbook book = new Spire.Xls.Workbook();
+                    Spire.Xls.Worksheet sheet = book.Worksheets[0];
+                    sheet.InsertDataTable(dt, true, 1, 1);
+                    book.SaveToFile(path + "\\" + exportText + "AttendeeDetails.xls");
+                }
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
