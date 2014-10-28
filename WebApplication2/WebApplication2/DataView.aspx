@@ -6,46 +6,85 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
+    body {
+	background-color: #FD620E;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.container {
+	width:100%;
+}
+.headerbar {
+	background-color:white;
+	height:50px;
+}
+.centercon {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logoarea {
+	height:60px;
+}
+.mainbody {
+	background-color:white;
+	min-height:800px;
+    width:1150px;
+	box-shadow: 5px 5px 5px #000;
+}
+.formdiv {
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	//border: 1px solid #666;
+}
+
+}
+
+input {
+    float:right;
+    width:200px;
+    border:2px solid #dadada;
+    border-radius:7px;
+    font-size:20px;
+    padding:2px;
+    margin-top:-10px;
+    margin-bottom: 0px;
         }
-        .auto-style2 {
-            width: 307px;
-            text-align: right;
-        }
-        .auto-style3 {
-            width: 94px;
-        }
-        .auto-style5 {
-            width: 136px;
-        }
-        .auto-style6 {
-            width: 83px;
-        }
-        .auto-style7 {
-            width: 307px;
-            text-align: right;
-            height: 12px;
-        }
-        .auto-style8 {
-            width: 94px;
-            height: 12px;
-        }
-        .auto-style9 {
-            width: 83px;
-            height: 12px;
-        }
-        .auto-style10 {
-            width: 136px;
-            height: 12px;
-            text-align: right;
-        }
-        .auto-style11 {
-            height: 12px;
-        }
+
+select {
+    float:right;
+    width:200px;
+    border:2px solid #dadada;
+    border-radius:5px;
+    font-size:20px;
+    padding:5px;
+    margin-top: -10px;    
+}
+
+input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed; 
+}
+.spacer {
+	height:50px;	
+}
     </style>
+    
 </head>
 <body>
+               <div class="container">
+<div class="headerbar"></div>
+<div class="centercon">
+<div class="logoarea">
+<img src="logo.png"/>
+</div>
+<div class="mainbody">
+<div class="spacer"></div>
+<div class="formdiv">
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" style="text-align: center; margin-top: 0px" Text="Attendee Details Table" Width="500px"></asp:Label>
     <div>
@@ -124,5 +163,6 @@
         <p>
             &nbsp;</p>
     </form>
+    </div></div></div></div>
 </body>
 </html>

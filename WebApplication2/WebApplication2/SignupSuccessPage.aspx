@@ -6,13 +6,72 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            height: 168px;
-        }
+            
+      body {
+	background-color: #FD620E;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.container {
+	width:100%;
+}
+.headerbar {
+	background-color:white;
+	height:50px;
+}
+.centercon {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logoarea {
+	height:60px;
+}
+.mainbody {
+	background-color:white;
+	min-height:800px;
+	box-shadow: 5px 5px 5px #000;
+}
+.formdiv {
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	//border: 1px solid #666;
+}
+
+select {
+    float:right;
+    width:200px;
+    border:2px solid #dadada;
+    border-radius:5px;
+    font-size:20px;
+    padding:5px;
+    margin-top: -10px;    
+}
+
+
+input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed; 
+}
+.spacer {
+	height:50px;	
+}
     </style>
 </head>
 <body>
+    <div class="container">
+<div class="headerbar"></div>
+<div class="centercon">
+<div class="logoarea">
+<img src="logo.png"/>
+</div>
+<div class="mainbody">
+<div class="spacer"></div>
+<div class="formdiv">
     <form id="form1" runat="server">
     <div>
     
@@ -34,5 +93,6 @@
             </tr>
         </table>
     </form>
+    </div></div></div></div>
 </body>
 </html>
