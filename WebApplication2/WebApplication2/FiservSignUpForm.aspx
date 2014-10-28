@@ -6,19 +6,102 @@
 <head runat="server">
     <title>Fiserv Sign Up Form</title>
     <style type="text/css">
+        body {
+	background-color: #FD620E;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.container {
+	width:100%;
+}
+.headerbar {
+	background-color:white;
+	height:50px;
+}
+.centercon {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logoarea {
+	height:60px;
+}
+.mainbody {
+	background-color:white;
+	min-height:800px;
+	box-shadow: 5px 5px 5px #000;
+}
+.formdiv {
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	//border: 1px solid #666;
+}
+label { 
+    display:block;
+    width:420px;
+    overflow:auto;
+    font-family:sans-serif;
+    font-size:20px;
+    color:#444;
+    text-shadow:0 0 2px #ddd;
+    padding:20px 10px 10px 10px;
+}
+
+input {
+    float:right;
+    width:200px;
+    border:2px solid #dadada;
+    border-radius:7px;
+    font-size:20px;
+    padding:2px;
+    margin-top:-10px;
+    margin-bottom: 0px;
+        }
+
+select {
+    float:right;
+    width:200px;
+    border:2px solid #dadada;
+    border-radius:5px;
+    font-size:20px;
+    padding:5px;
+    margin-top: -10px;    
+}
+
+input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed; 
+}
+.spacer {
+	height:50px;	
+}
+
+        }
         .auto-style1 {
-            width: 100%;
+            height: 43px;
         }
         .auto-style2 {
-            width: 357px;
-            text-align: right;
+            height: 44px;
         }
         .auto-style3 {
-            width: 239px;
+            height: 45px;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+    <div class="headerbar"></div>
+    <div class="centercon">
+    <div class="logoarea">
+    <img src="logo.png"/>
+    </div>
+    <div class="mainbody">
+    <div class="spacer"></div>
+    <div class="formdiv">
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <br />
@@ -26,7 +109,7 @@
         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" style="text-align: center" Text="Fiserv Career Fair Sign up Form"></asp:Label>
         <br />
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="welcomeMsg" runat="server"></asp:Label>
         <br />
         <table class="auto-style1">
@@ -64,11 +147,11 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Phone Number:</td>
+                <td class="auto-style3">Phone Number:</td>
                 <td class="auto-style3">
                     <asp:TextBox ID="PhoneNo" runat="server" Width="207px"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style3">
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="PhoneNo" ErrorMessage="Invalid Number" Font-Italic="True" ForeColor="Red" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
@@ -146,7 +229,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Selfie:</td>
+                <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
