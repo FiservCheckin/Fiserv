@@ -16,6 +16,18 @@
         .auto-style3 {
             width: 239px;
         }
+        .auto-style4 {
+            width: 357px;
+            text-align: right;
+            height: 26px;
+        }
+        .auto-style5 {
+            width: 239px;
+            height: 26px;
+        }
+        .auto-style6 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -124,31 +136,37 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;Role:</td>
+                <td class="auto-style2">DreamRole 1 </td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="Role" runat="server" Width="210px">
-                        <asp:ListItem>Select A Role</asp:ListItem>
-                        <asp:ListItem>Software Developer</asp:ListItem>
-                        <asp:ListItem>Software Architect</asp:ListItem>
-                        <asp:ListItem>QA Test Analyst</asp:ListItem>
-                        <asp:ListItem>Test Engineer</asp:ListItem>
-                        <asp:ListItem>Systems Administrator</asp:ListItem>
-                        <asp:ListItem>Application Support Specialist</asp:ListItem>
-                        <asp:ListItem>User Experience Designer</asp:ListItem>
-                        <asp:ListItem>Project Manager</asp:ListItem>
-                        <asp:ListItem>Business Analyst</asp:ListItem>
-                        <asp:ListItem>Scrum Master</asp:ListItem>
+                    <asp:DropDownList ID="DreamRoleDropDownList1" runat="server" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" OnSelectedIndexChanged="DreamRoleDropDownList1_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="Fiserv" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT [DreamRole] FROM [DreamRoles]"></asp:SqlDataSource>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="Role" EnableClientScript="true" ErrorMessage="Role Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Role"></asp:RequiredFieldValidator>
-                    <br />
+                    <asp:RequiredFieldValidator ID="DreamRoleRequiredFieldValidator" runat="server" ControlToValidate="DreamRoleDropDownList1" ErrorMessage="The first dream role is required" ForeColor="Red" InitialValue="Select Dream Role"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Selfie:</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2">DreamRole 2 </td>
+                <td class="auto-style3">
+                    <asp:DropDownList ID="DreamRoleDropDownList2" runat="server" OnSelectedIndexChanged="DreamRoleDropDownList2_SelectedIndexChanged" AutoPostBack="True" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" Enabled="False">
+                    </asp:DropDownList>
+                    </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">DreamRole 3 </td>
+                <td class="auto-style5">
+                    <asp:DropDownList ID="DreamRoleDropDownList3" runat="server" Enabled="False" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" >
+                        <asp:ListItem>Select Dream Role</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td class="auto-style6">
+                    </td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>

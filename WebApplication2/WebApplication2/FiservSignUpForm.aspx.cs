@@ -12,6 +12,10 @@ namespace WebApplication2
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        static int lastChangeIDFor1;
+        static ListItem lastChangeItemFor1;
+        static int lastChangeIDFor2;
+        static ListItem lastChangeItemFor2;
         protected void Page_Load(object sender, EventArgs e)
         {
             welcomeMsg.Text = WebForm6.welcomeMsg;
@@ -44,6 +48,14 @@ namespace WebApplication2
                         }
                     }
                 }
+            ////DataTable CityMembersTable = GetCity();
+            //DreamRoleDropDownList2.DataSource = ;
+            //DreamRoleDropDownList2.DataTextField = "CityName";
+            //DreamRoleDropDownList2.DataValueField = "CityID";
+            //DreamRoleDropDownList2.DataBind();
+
+            DreamRoleDropDownList2.Items.Insert(0, new ListItem("<--Choose City-->", ""));
+
             }
         }
 
@@ -56,22 +68,29 @@ namespace WebApplication2
                 {
                     conn.Open();
                     //inserts the attendees inputs into the Attendee table in the database
-                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@MajorId,@InputTime)";
-
-                    //insert time stamp
-                    // string inputTimeStamp = "insert into Attendee (InputTime) values (TO_TIMESTAMP(:ts_val, 'YYYY-MM-DD HH24:MI:SS'));
+                    
+                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,Role2,Role3,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@Role2,@Role3,@MajorId,@InputTime)";
+                    
                     //execute the querys
                     SqlCommand com = new SqlCommand(insertQuery, conn);
-
+                    
                     com.Parameters.AddWithValue("@fname", Fname.Text);
                     com.Parameters.AddWithValue("@lname", Lname.Text);
                     com.Parameters.AddWithValue("@email", Email.Text);
                     com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
                     com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
-                    com.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@Role", DreamRoleDropDownList1.SelectedItem.ToString());
+
+                    com.Parameters.AddWithValue("@Role2", DreamRoleDropDownList2.SelectedItem.ToString() == "Select Dream Role" ? (object)DBNull.Value : DreamRoleDropDownList2.SelectedItem.ToString());
+
+                    com.Parameters.AddWithValue("@Role3", DreamRoleDropDownList3.SelectedItem.ToString() == "Select Dream Role" ? (object)DBNull.Value : DreamRoleDropDownList3.SelectedItem.ToString());
+
                     com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
                     com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
+
+                   
+
                     com.ExecuteNonQuery();
 
                     Response.Redirect("SignupSuccessPage.aspx");
@@ -149,11 +168,6 @@ namespace WebApplication2
             return datatable;
         }
 
-        protected void Fname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void ddlDegree_SelectedIndexChanged(object sender, EventArgs e)
         {
             while (ddlMajor.Items.Count > 1)
@@ -175,6 +189,113 @@ namespace WebApplication2
                     {
                         ddlMajor.Items.Add(new ListItem(row.Field<string>("MajorName"), row.Field<int>("MajorId").ToString()));
                     }
+                }
+            }
+        }
+
+        protected void DreamRoleDropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            if (DreamRoleDropDownList2.Enabled == false)
+            {
+                DreamRoleDropDownList2.Enabled = true;
+
+                DreamRoleDropDownList2.Items.Remove(DreamRoleDropDownList1.SelectedItem);
+
+                DreamRoleDropDownList3.Items.Remove(DreamRoleDropDownList1.SelectedItem);
+
+                lastChangeIDFor1 = DreamRoleDropDownList1.SelectedIndex;
+                lastChangeItemFor1 = DreamRoleDropDownList1.SelectedItem;
+            }
+            else
+            {
+                if (DreamRoleDropDownList1.SelectedIndex == 0)
+                {
+                    DreamRoleDropDownList2.ClearSelection();
+
+                    DreamRoleDropDownList1.ClearSelection();
+
+                    DreamRoleDropDownList2.Items.Insert(lastChangeIDFor1, lastChangeItemFor1);
+
+                    DreamRoleDropDownList3.Items.Insert(lastChangeIDFor1, lastChangeItemFor1);
+
+                    DreamRoleDropDownList2.SelectedIndex = 0;
+
+                    DreamRoleDropDownList3.SelectedIndex = 0;
+
+                    DreamRoleDropDownList2.Enabled = false;
+
+                    DreamRoleDropDownList3.Enabled = false;
+
+                    DreamRoleDropDownList2.ClearSelection();
+
+                    DreamRoleDropDownList1.ClearSelection();
+                }
+                else
+                {
+                    DreamRoleDropDownList2.ClearSelection();
+
+                    DreamRoleDropDownList2.Items.Insert(lastChangeIDFor1, lastChangeItemFor1);
+
+                    DreamRoleDropDownList2.Items.Remove(DreamRoleDropDownList1.SelectedItem);
+
+                    DreamRoleDropDownList3.Items.Insert(lastChangeIDFor1, lastChangeItemFor1);
+
+                    DreamRoleDropDownList3.Items.Remove(DreamRoleDropDownList1.SelectedItem);
+
+                    DreamRoleDropDownList2.SelectedIndex = 0;
+
+                    DreamRoleDropDownList3.SelectedIndex = 0;
+
+                    DreamRoleDropDownList3.Enabled = false;
+
+                    lastChangeIDFor1 = DreamRoleDropDownList1.SelectedIndex;
+                    lastChangeItemFor1 = DreamRoleDropDownList1.SelectedItem;
+                }
+            }
+            
+        }
+
+        protected void DreamRoleDropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (DreamRoleDropDownList3.Enabled == false)
+            {
+                DreamRoleDropDownList3.Enabled = true;
+                DreamRoleDropDownList3.Items.Remove(DreamRoleDropDownList2.SelectedItem);
+
+                lastChangeIDFor2 = DreamRoleDropDownList2.SelectedIndex;
+                lastChangeItemFor2 = DreamRoleDropDownList2.SelectedItem;
+            }
+            else
+            {
+                if (DreamRoleDropDownList2.SelectedIndex == 0)
+                {
+                    DreamRoleDropDownList2.ClearSelection();
+
+                    DreamRoleDropDownList3.ClearSelection();
+
+                    DreamRoleDropDownList3.Items.Insert(lastChangeIDFor2, lastChangeItemFor2);
+
+                    DreamRoleDropDownList3.Enabled = false;
+
+                    DreamRoleDropDownList3.SelectedIndex = 0;
+
+                    DreamRoleDropDownList2.ClearSelection();
+
+                    DreamRoleDropDownList3.ClearSelection();                    
+                }
+                else
+                {
+                    DreamRoleDropDownList3.ClearSelection();
+
+                    DreamRoleDropDownList3.Items.Insert(lastChangeIDFor2, lastChangeItemFor2);
+
+                    DreamRoleDropDownList3.Items.Remove(DreamRoleDropDownList2.SelectedItem);
+
+                    DreamRoleDropDownList3.SelectedIndex = 0;
+
+                    lastChangeIDFor2 = DreamRoleDropDownList2.SelectedIndex;
+                    lastChangeItemFor2 = DreamRoleDropDownList2.SelectedItem;
                 }
             }
         }
