@@ -120,19 +120,12 @@
                         <asp:ListItem>Semester 2</asp:ListItem>
                     </asp:DropDownList>
                     <asp:DropDownList ID="GradYear" runat="server">
-                        <asp:ListItem>Select Year</asp:ListItem>
-                        <asp:ListItem>2014</asp:ListItem>
-                        <asp:ListItem>2015</asp:ListItem>
-                        <asp:ListItem>2016</asp:ListItem>
-                        <asp:ListItem>2017</asp:ListItem>
-                        <asp:ListItem>2018</asp:ListItem>
-                        <asp:ListItem>2019</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="GradSem" EnableClientScript="true" ErrorMessage="Semester Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Semester"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" EnableClientScript="true" ErrorMessage="Year Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Year"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="GradYear" EnableClientScript="true" ErrorMessage="Graduate Year Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Graduate Year"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>

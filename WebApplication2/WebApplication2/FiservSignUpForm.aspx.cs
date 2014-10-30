@@ -16,6 +16,7 @@ namespace WebApplication2
         static ListItem lastChangeItemFor1;
         static int lastChangeIDFor2;
         static ListItem lastChangeItemFor2;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             welcomeMsg.Text = WebForm6.welcomeMsg;
@@ -48,15 +49,22 @@ namespace WebApplication2
                         }
                     }
                 }
-            ////DataTable CityMembersTable = GetCity();
-            //DreamRoleDropDownList2.DataSource = ;
-            //DreamRoleDropDownList2.DataTextField = "CityName";
-            //DreamRoleDropDownList2.DataValueField = "CityID";
-            //DreamRoleDropDownList2.DataBind();
 
             DreamRoleDropDownList2.Items.Insert(0, new ListItem("<--Choose City-->", ""));
 
             }
+
+            //Build dynamic graduate year values for graduate year drop down list
+            int firstGradYear;
+            firstGradYear = (int)DateTime.Now.Year;
+            GradYear.Items.Add("Select Graduate Year");
+            for (int i = 0 ; i <= 4; i++)
+            {
+                GradYear.Items.Add(new ListItem((firstGradYear + i).ToString()));
+                //, i.ToString()
+            }
+            
+
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
