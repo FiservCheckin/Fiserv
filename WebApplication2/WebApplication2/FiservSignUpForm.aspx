@@ -22,11 +22,14 @@
             height: 26px;
         }
         .auto-style5 {
-            width: 239px;
+            width: 241px;
             height: 26px;
         }
         .auto-style6 {
             height: 26px;
+        }
+        .auto-style7 {
+            width: 241px;
         }
     </style>
 </head>
@@ -44,7 +47,7 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">First Name:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:TextBox ID="Fname" runat="server" Width="201px" ></asp:TextBox>
                 </td>
                 <td>
@@ -55,7 +58,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">Last Name:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:TextBox ID="Lname" runat="server" Width="207px"></asp:TextBox>
                 </td>
                 <td>
@@ -66,7 +69,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">Email Address:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:TextBox ID="Email" runat="server" Width="207px"></asp:TextBox>
                 </td>
                 <td>
@@ -77,7 +80,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">Phone Number:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:TextBox ID="PhoneNo" runat="server" Width="207px"></asp:TextBox>
                 </td>
                 <td>
@@ -113,7 +116,7 @@
             </asp:UpdatePanel>
             <tr>
                 <td class="auto-style2">Graduation Year:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:DropDownList ID="GradSem" runat="server" Width="125px">
                         <asp:ListItem>Select Semester</asp:ListItem>
                         <asp:ListItem>Semester 1</asp:ListItem>
@@ -130,7 +133,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">DreamRole 1 </td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:DropDownList ID="DreamRoleDropDownList1" runat="server" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" OnSelectedIndexChanged="DreamRoleDropDownList1_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="Fiserv" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT [DreamRole] FROM [DreamRoles]"></asp:SqlDataSource>
@@ -141,7 +144,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">DreamRole 2 </td>
-                <td class="auto-style3">
+                <td class="auto-style7">
                     <asp:DropDownList ID="DreamRoleDropDownList2" runat="server" OnSelectedIndexChanged="DreamRoleDropDownList2_SelectedIndexChanged" AutoPostBack="True" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" Enabled="False">
                     </asp:DropDownList>
                     </td>
@@ -163,8 +166,8 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:Button ID="SubmitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" />
+                <td class="auto-style7">
+                    <asp:Button ID="SubmitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" style="height: 26px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

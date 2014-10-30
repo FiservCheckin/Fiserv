@@ -22,6 +22,9 @@ namespace WebApplication2
             welcomeMsg.Text = WebForm6.welcomeMsg;
             if (IsPostBack)
             {
+
+                
+
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
                 //checks if email of the attendee already exist in database, if it exist it will not input
@@ -37,6 +40,16 @@ namespace WebApplication2
             }
             else
             {
+
+                //Build dynamic graduate year values for graduate year drop down list
+                int firstGradYear;
+                firstGradYear = (int)DateTime.Now.Year;
+                GradYear.Items.Add("Select Graduate Year");
+                for (int i = 0; i <= 4; i++)
+                {
+                    GradYear.Items.Add(new ListItem((firstGradYear + i).ToString()));
+                }
+
                 if (!string.IsNullOrEmpty(ddlDegree.SelectedValue))
                 {
                     var degreeTable = GetAllDegrees();
@@ -54,15 +67,7 @@ namespace WebApplication2
 
             }
 
-            //Build dynamic graduate year values for graduate year drop down list
-            int firstGradYear;
-            firstGradYear = (int)DateTime.Now.Year;
-            GradYear.Items.Add("Select Graduate Year");
-            for (int i = 0 ; i <= 4; i++)
-            {
-                GradYear.Items.Add(new ListItem((firstGradYear + i).ToString()));
-                //, i.ToString()
-            }
+            
             
 
         }
