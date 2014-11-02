@@ -134,7 +134,8 @@
             <tr>
                 <td class="auto-style2">DreamRole 1 </td>
                 <td class="auto-style7">
-                    <asp:DropDownList ID="DreamRoleDropDownList1" runat="server" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" OnSelectedIndexChanged="DreamRoleDropDownList1_SelectedIndexChanged" AutoPostBack="True">
+                    <asp:DropDownList ID="DreamRoleDropDownList1" runat="server" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" On
+                        ="DreamRoleDropDownList1_SelectedIndexChanged" AutoPostBack="True" OnSelectedIndexChanged="DreamRoleDropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="Fiserv" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT [DreamRole] FROM [DreamRoles]"></asp:SqlDataSource>
                 </td>
@@ -154,7 +155,7 @@
             <tr>
                 <td class="auto-style4">DreamRole 3 </td>
                 <td class="auto-style5">
-                    <asp:DropDownList ID="DreamRoleDropDownList3" runat="server" Enabled="False" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole" >
+                    <asp:DropDownList ID="DreamRoleDropDownList3" runat="server" Enabled="False" DataSourceID="Fiserv" DataTextField="DreamRole" DataValueField="DreamRole">
                         <asp:ListItem>Select Dream Role</asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
