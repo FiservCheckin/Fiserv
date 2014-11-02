@@ -1,0 +1,86 @@
+﻿body {
+	background-color: #FD620E;
+	margin:0 auto;
+}
+table{
+    margin: 0 auto;
+}
+table tr{
+    height: 50px;
+}
+.errorMsg{
+    color:red;
+}
+.container {
+	width:100%;
+}
+.headerbar {
+	background-color:white;
+	height:50px;
+}
+.centercon {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logoarea {
+	height:60px;
+}
+.mainbody {
+	background-color:white;
+	min-height:800px;
+	box-shadow: 5px 5px 5px #000;
+}
+.formdiv {
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+select {
+    width:300px;
+    border:2px solid #dadada;
+    border-radius:5px;
+    font-size:20px;
+    padding:5px;
+    margin:10px 0; 
+    cursor: pointer;
+}
+
+
+.spacer {
+	height:50px;	
+}
+
+input {
+    width:300px;
+    border:2px solid #dadada;
+    border-radius:7px;
+    font-size:20px;
+    padding:2px;
+    margin-top:-10px;
+    margin-bottom: 0px;
+    cursor:pointer;
+        }
+
+
+
+input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed; 
+}
+
+.radioButtonDiv{
+    height:50px;
+}
+.radioButtonDiv input{
+    width:20px;
+    margin: 15px 20px 0 30px;
+}
+.auto-style2{
+    font-family: Arial;
+    font-size: 20px;
+    color:#FD620E;
+    width:170px;
+}
