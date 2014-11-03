@@ -78,6 +78,7 @@
       <DependentUpon>FiservDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="ChangePassword.aspx" />
+    <Content Include="CSS\default.css" />
     <Content Include="logo.png" />
     <Content Include="SignupSuccessPage.aspx" />
     <Content Include="Web.config" />
