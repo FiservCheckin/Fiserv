@@ -100,7 +100,7 @@ input:focus {
                             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                             <asp:BoundField DataField="PhoneNo" HeaderText="PhoneNo" SortExpression="PhoneNo" />
                             <asp:BoundField DataField="DegreeName" HeaderText="Degree" SortExpression="DegreeName" />
-                            <asp:BoundField DataField="MajorName" HeaderText="Major" SortExpression="MajorName" />
+                            <%--<asp:BoundField DataField="MajorName" HeaderText="Major" SortExpression="MajorName" />--%>
                             <asp:BoundField DataField="GradSem" HeaderText="GradSem" SortExpression="GradSem" />
                             <asp:BoundField DataField="GradYear" HeaderText="GradYear" SortExpression="GradYear" />
                             <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />

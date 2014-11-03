@@ -69,7 +69,9 @@ namespace WebApplication2
                     conn.Open();
                     //inserts the attendees inputs into the Attendee table in the database
                     
-                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,Role2,Role3,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@Role2,@Role3,@MajorId,@InputTime)";
+                    string insertQuery = @"
+                        insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,Role2,Role3,InputTime,DegreeId) 
+                        values (@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@Role2,@Role3,@InputTime,@DegreeId)";
                     
                     //execute the querys
                     SqlCommand com = new SqlCommand(insertQuery, conn);
@@ -81,12 +83,11 @@ namespace WebApplication2
                     com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@Role", DreamRoleDropDownList1.SelectedItem.ToString());
-
                     com.Parameters.AddWithValue("@Role2", DreamRoleDropDownList2.SelectedItem.ToString() == "Select Dream Role" ? (object)DBNull.Value : DreamRoleDropDownList2.SelectedItem.ToString());
-
                     com.Parameters.AddWithValue("@Role3", DreamRoleDropDownList3.SelectedItem.ToString() == "Select Dream Role" ? (object)DBNull.Value : DreamRoleDropDownList3.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@DegreeId", ddlDegree.SelectedValue);
 
-                    com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
+                    //com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
                     com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
 
                    
@@ -170,27 +171,27 @@ namespace WebApplication2
 
         protected void ddlDegree_SelectedIndexChanged(object sender, EventArgs e)
         {
-            while (ddlMajor.Items.Count > 1)
-            {
-                ddlMajor.Items.RemoveAt(1);
-            }
+            //while (ddlMajor.Items.Count > 1)
+            //{
+            //    ddlMajor.Items.RemoveAt(1);
+            //}
 
-            int degreeId = 0;
-            if (!int.TryParse(ddlDegree.SelectedValue, out degreeId))
-                return;
+            //int degreeId = 0;
+            //if (!int.TryParse(ddlDegree.SelectedValue, out degreeId))
+            //    return;
 
-            if (!string.IsNullOrEmpty(ddlDegree.SelectedValue))
-            {
-                var majorTable = GetMajors(degreeId);
+            //if (!string.IsNullOrEmpty(ddlDegree.SelectedValue))
+            //{
+            //    var majorTable = GetMajors(degreeId);
 
-                if (majorTable != null & majorTable.Rows.Count > 0)
-                {
-                    foreach (DataRow row in majorTable.Rows)
-                    {
-                        ddlMajor.Items.Add(new ListItem(row.Field<string>("MajorName"), row.Field<int>("MajorId").ToString()));
-                    }
-                }
-            }
+            //    if (majorTable != null & majorTable.Rows.Count > 0)
+            //    {
+            //        foreach (DataRow row in majorTable.Rows)
+            //        {
+            //            ddlMajor.Items.Add(new ListItem(row.Field<string>("MajorName"), row.Field<int>("MajorId").ToString()));
+            //        }
+            //    }
+            //}
         }
 
         protected void DreamRoleDropDownList1_SelectedIndexChanged(object sender, EventArgs e)

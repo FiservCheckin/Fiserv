@@ -89,7 +89,7 @@
                     <tr>
                         <td class="auto-style2">Degree:</td>
                         <td class="auto-style3">
-                            <asp:DropDownList ID="ddlDegree" runat="server" Width="210px" OnSelectedIndexChanged="ddlDegree_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:DropDownList ID="ddlDegree" runat="server" Width="210px">
                                 <asp:ListItem>Select A Degree</asp:ListItem>
                             </asp:DropDownList>
                         </td>
@@ -97,7 +97,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlDegree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Degree" EnableClientScript="true"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr>
+                    <%--<tr>
                         <td class="auto-style2">Major</td>
                         <td class="auto-style3">
                             <asp:DropDownList ID="ddlMajor" runat="server" Height="20px" style="margin-top: 8px" Width="209px">
@@ -108,7 +108,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlMajor" ErrorMessage="Major Is Required" Font-Italic="True" ForeColor="Red" InitialValue="What is your major studied?" EnableClientScript="true"></asp:RequiredFieldValidator>
                             <br />
                         </td>
-                    </tr>
+                    </tr>--%>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <tr>
