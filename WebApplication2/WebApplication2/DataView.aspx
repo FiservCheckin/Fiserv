@@ -22,9 +22,7 @@
                         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" Style="text-align: center; margin-top: 0px" Text="Attendee Details Table" Width="500px"></asp:Label>
                         <div>
 
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT * FROM [Attendee]"></asp:SqlDataSource>
-
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="AttendeeId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
                                     <%--<asp:BoundField DataField="CareerCode" HeaderText="CareerCode" ReadOnly="True" SortExpression="CareerCode" />--%>
@@ -32,13 +30,14 @@
                                     <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="PhoneNo" HeaderText="PhoneNo" SortExpression="PhoneNo" />
-                                    <asp:BoundField DataField="DegreeName" HeaderText="Degree" SortExpression="DegreeName" />
-                                    <asp:BoundField DataField="MajorName" HeaderText="Major" SortExpression="MajorName" />
+                                    <asp:BoundField DataField="Degree" HeaderText="Degree" SortExpression="Degree" />
                                     <asp:BoundField DataField="GradSem" HeaderText="GradSem" SortExpression="GradSem" />
                                     <asp:BoundField DataField="GradYear" HeaderText="GradYear" SortExpression="GradYear" />
                                     <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
+                                    <asp:BoundField DataField="Role2" HeaderText="Role2" SortExpression="Role2" />
                                     <%--<asp:BoundField DataField="JobAvailability" HeaderText="JobAvailability" SortExpression="JobAvailability" />--%>
                                     <%--<asp:BoundField DataField="LinkedIn" HeaderText="LinkedIn" SortExpression="LinkedIn" />--%>
+                                    <asp:BoundField DataField="Role3" HeaderText="Role3" SortExpression="Role3" />
                                     <asp:BoundField DataField="InputTime" HeaderText="InputTime" SortExpression="InputTime" />
                                 </Columns>
                                 <EditRowStyle BackColor="#2461BF" />
@@ -53,6 +52,8 @@
                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
 
                             </asp:GridView>
+
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [PhoneNo], [Degree], [GradSem], [GradYear], [Role], [Role2], [Role3], [InputTime] FROM [Attendee]"></asp:SqlDataSource>
 
                         </div>
                         <table class="auto-style1">
@@ -81,7 +82,7 @@
                                 </td>
                                 <td class="auto-style9"></td>
                                 <td class="auto-style10">Available Roles To Export:</td>
-                                <td class="auto-style11">&nbsp;Software Developer, QA Test Analyst, Test Engineer, Systems Administrator, Application Support Specialist, User Experience Designer, Project Manager, Business Analyst, Scrum Master</td>
+                                <td class="auto-style11">Business Analyst, C# . Net Developer, Mobile Deveopler (iOS), Mobile Developer (Android), Mobile Developer (Windows), QA Test Analyst</td>
                             </tr>
                         </table>
                         <p>

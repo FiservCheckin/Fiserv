@@ -20,31 +20,13 @@ namespace WebApplication2
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                SqlDataSource1.SelectCommand = @"
-                    SELECT a.*, dm.DegreeName, dm.MajorName
-                    FROM [Attendee] a
-                        OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm";
-            }
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Export_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
             conn.Open();
             SqlCommand command = new SqlCommand();
-            command.CommandText = @"
-                SELECT a.AttendeeId, a.InputTime, a.FirstName, a.LastName, a.Email, a.PhoneNo, a.GradSem, a.GradYear, a.Role, dm.DegreeName, dm.MajorName
-                FROM [Attendee] a
-                    OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm";
+            command.CommandText = @"SELECT * FROM [Attendee]";
+
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command.CommandText, conn))
             {
                 DataTable dt = new DataTable();
@@ -118,12 +100,11 @@ namespace WebApplication2
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand();
-                command.CommandText = @"
-                SELECT a.AttendeeId, a.InputTime, a.FirstName, a.LastName, a.Email, a.PhoneNo, a.GradSem, a.GradYear, a.Role, dm.DegreeName, dm.MajorName
-                FROM [Attendee] a
-                    OUTER APPLY (SELECT d.DegreeName, m.MajorName FROM Degrees d INNER JOIN Majors m ON d.DegreeId = m.DegreeId WHERE a.MajorId = m.MajorId) dm
-                WHERE a.Role = @Role";
-                command.Parameters.AddWithValue("@Role", ExportText.Text);
+                command.CommandText = @"SELECT * FROM [Attendee] WHERE 
+                       (Role LIKE @searchRole 
+                    OR Role2 LIKE @searchRole)
+                    OR Role3 LIKE @searchRole";
+                command.Parameters.AddWithValue("@searchRole", "%" + ExportText.Text + "%");
 
                 using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
                 {
