@@ -110,39 +110,21 @@ G:\New folder\xinxin\Fiserv2\WebApplication2\WebApplication2\obj\Debug\WebApplic
 C:\Users\Danny\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
 C:\Users\Danny\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
 C:\Users\Danny\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.pdb
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
-C:\Users\ssq0642\Source\Repos\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.pdb
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
-G:\New folder\zuixin\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.pdb
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
-D:\projects\Fiserv4\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.dll
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\WebApplication2.pdb
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\Spire.License.dll
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\Spire.Common.xml
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\bin\Spire.XLS.xml
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
-G:\New folder (2)\Fiserv\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\Spire.License.dll
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\Spire.Common.xml
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\tiger_000\Desktop\3110\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\WebApplication2.dll
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\Spire.License.dll
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\Spire.Common.xml
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+E:\y3 s2\R & D Project\Code\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
