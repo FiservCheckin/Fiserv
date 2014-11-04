@@ -24,7 +24,7 @@
         <asp:Label ID="titleLabel" runat="server" Font-Size="30pt" ForeColor="#FF6600" Style="text-align: center"></asp:Label>
                         <br />
                         <br />
-        <asp:Label ID="welcomeMsg" runat="server"></asp:Label>
+        <asp:Label ID="welcomeMsg" runat="server" ></asp:Label>
                         <br />
                         <table class="auto-style1">
                             <tr>
