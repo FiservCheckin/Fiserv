@@ -13,15 +13,34 @@ namespace WebApplication2
         public static string statusText;
         protected void Page_Load(object sender, EventArgs e)
         {
-            statusLbl.Text = statusText;
-            if (statusText == "The sign up form is active")
+            
+            if (Session["isLogin"] != null)
             {
-                RadioButton1.Checked = true;
+                if ((bool)Session["isLogin"])
+                {
+                    statusLbl.Text = statusText;
+                    if (statusText == "The sign up form is active")
+                    {
+                        RadioButton1.Checked = true;
+                    }
+                    else if (statusText == "The sign up form is inactive")
+                    {
+                        RadioButton2.Checked = true;
+                    }
+                }
+                else
+                {
+                    Session["loginMsg"] = "Pleas Login first!";
+                    Response.Redirect("AdminLogin.aspx");
+                }
+                
             }
-            else if (statusText == "The sign up form is inactive")
+            else
             {
-                RadioButton2.Checked = true;
+                Session["loginMsg"] = "Pleas Login first!";
+                Response.Redirect("AdminLogin.aspx");
             }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -58,6 +77,12 @@ namespace WebApplication2
                 statusLbl.Text = "The sign up form is inactive";
                 statusText = statusLbl.Text;
             }
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["isLogin"] = null;
+            Response.Redirect("AdminLogin.aspx");
         } 
        
     }

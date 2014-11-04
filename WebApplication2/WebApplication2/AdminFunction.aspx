@@ -54,10 +54,14 @@
                                     <asp:Label ID="statusLbl" runat="server"></asp:Label>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="Button5" runat="server" Text="Logout" OnClick="Button5_Click" />
+                                </td>
+                            </tr>
                         </table>
                         <div>
-                            &nbsp;
-            
+                        
                         </div>
                     </form>
                 </div>

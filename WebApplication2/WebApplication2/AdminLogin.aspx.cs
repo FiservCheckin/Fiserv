@@ -13,7 +13,25 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["isLogin"] != null)
+            {
+                if ((bool)Session["isLogin"])
+                {
+                    Response.Redirect("AdminFunction.aspx");
+                }
+                
+            }
+            
+            if (Session["loginMsg"] != null)
+            {
+                Label3.Text = Session["loginMsg"].ToString();
+                Session["loginMsg"] = null;
+            }
+            else
+            {
+                Label3.Text = "";
+            }
+            
         }
 
         protected void Loginbutton_Click(object sender, EventArgs e)
@@ -42,8 +60,11 @@ namespace WebApplication2
                
                 conn.Close();
 
+                
+
                 if (psw == inputpsw)
-                {                    
+                {
+                    Session["isLogin"] = true;
                     Response.Redirect("AdminFunction.aspx");
                 }            
                 
