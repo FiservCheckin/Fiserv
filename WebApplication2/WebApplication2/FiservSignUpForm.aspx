@@ -21,7 +21,7 @@
                     <form id="form1" runat="server">
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                         <br />
-        <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Style="text-align: center" Text="Fiserv Career Fair Sign up Form"></asp:Label>
+        <asp:Label ID="titleLabel" runat="server" Font-Size="30pt" ForeColor="#FF6600" Style="text-align: center"></asp:Label>
                         <br />
                         <br />
         <asp:Label ID="welcomeMsg" runat="server"></asp:Label>

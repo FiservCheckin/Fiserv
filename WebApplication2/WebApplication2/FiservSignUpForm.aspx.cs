@@ -11,7 +11,8 @@ using System.Data;
 namespace WebApplication2
 {
     public partial class WebForm1 : System.Web.UI.Page
-    {
+    {   
+        
         static int lastChangeIDFor1;
         static ListItem lastChangeItemFor1;
         static int lastChangeIDFor2;
@@ -19,6 +20,9 @@ namespace WebApplication2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            DateTime dt = DateTime.Now;
+            titleLabel.Text = dt.ToString("MMMM") + " " + DateTime.Now.Year.ToString() + " Careers Fair";
+            
             welcomeMsg.Text = WebForm6.welcomeMsg;
             if (IsPostBack)
             {
@@ -144,13 +148,6 @@ namespace WebApplication2
             DreamRoleDropDownList2.SelectedIndex = 0;
 
             DreamRoleDropDownList3.SelectedIndex = 0;
-
-            //else if (DreamRoleDropDownList1.SelectedItem == DreamRoleDropDownList3.SelectedItem)                    
-            //{
-
-            //    DreamRoleDropDownList3.Enabled = false;
-            //    DreamRoleDropDownList3.SelectedIndex = 0;
-            //}
         }
 
         protected void DreamRoleDropDownList2_SelectedIndexChanged(object sender, EventArgs e)

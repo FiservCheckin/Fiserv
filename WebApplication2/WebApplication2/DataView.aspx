@@ -70,7 +70,9 @@
                                     <asp:TextBox ID="ExportText" runat="server" Height="22px" Style="margin-left: 0px" Width="135px"></asp:TextBox>
                                 </td>
                                 <td style="text-align: left">
-                                    <asp:Button ID="ExportRole" runat="server" OnClick="ExportRole_Click" Text="Export" /></td>
+                                    <asp:Button ID="ExportRole" causesvalidation="true" validationgroup="exportRoleGroup" runat="server" OnClick="ExportRole_Click" Text="Export" />
+                                    <asp:RequiredFieldValidator ID="roleExportRequiredFieldValidator" runat="server" ControlToValidate="ExportText" validationgroup="exportRoleGroup" ErrorMessage="At least one charactor is needed" ForeColor="Red"></asp:RequiredFieldValidator>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style7">Clear Database</td>
