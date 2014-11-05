@@ -84,7 +84,7 @@
                                 </td>
                                 <td class="auto-style9"></td>
                                 <td class="auto-style10">Available Roles To Export:</td>
-                                <td class="auto-style11">Business Analyst, C# . Net Developer, Mobile Deveopler (iOS), Mobile Developer (Android), Mobile Developer (Windows), QA Test Analyst</td>
+                                <td class="auto-style11">Business Analyst, C# . Net Developer, Mobile Deveopler (iOS), Mobile Developer (Android), Mobile Developer (Windows), QA, Tester</td>
                             </tr>
                         </table>
                         <p>

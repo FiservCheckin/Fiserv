@@ -30,14 +30,14 @@ namespace WebApplication2
                 }
                 else
                 {
-                    Session["loginMsg"] = "Pleas Login first!";
+                    Session["loginMsg"] = "Please Login first!";
                     Response.Redirect("AdminLogin.aspx");
                 }
                 
             }
             else
             {
-                Session["loginMsg"] = "Pleas Login first!";
+                Session["loginMsg"] = "Please Login first!";
                 Response.Redirect("AdminLogin.aspx");
             }
             

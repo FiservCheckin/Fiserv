@@ -3,7 +3,7 @@
 	margin:0 auto;
 }
 table{
-    margin: 0 auto;
+    margin: 0 auto 0 0px;
 }
 table tr{
     height: 50px;
@@ -86,4 +86,5 @@ input:focus {
 }
 #welcomeMsg{
     color:#FD620E;
+    font-size: 22px;
 }

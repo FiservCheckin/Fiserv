@@ -137,3 +137,12 @@ C:\Users\tiger_000\Desktop\0411\WebApplication2\WebApplication2\bin\Spire.XLS.xm
 C:\Users\tiger_000\Desktop\0411\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
 C:\Users\tiger_000\Desktop\0411\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\tiger_000\Desktop\0411\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.License.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.Common.xml
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Debug\FiservCheckIn.csprojResolveAssemblyReference.cache
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

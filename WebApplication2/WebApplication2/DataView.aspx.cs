@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Spire.Xls;
 using System.Configuration;
 using System.Data.OleDb;
+using System.IO;
 
 namespace WebApplication2
 {
@@ -38,10 +39,28 @@ namespace WebApplication2
 
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                Spire.Xls.Workbook book = new Spire.Xls.Workbook();
-                Spire.Xls.Worksheet sheet = book.Worksheets[0];
-                sheet.InsertDataTable(dt, true, 1, 1);
-                book.SaveToFile(path + "\\AllAttendeeDetails.xls");
+                GridView grid = new GridView();
+                grid.DataSource = dt;
+                grid.DataBind();
+                StringWriter sw = new StringWriter();
+                HtmlTextWriter htw = new HtmlTextWriter(sw);
+                grid.RenderControl(htw);
+                sw.Close();
+                htw.Close();
+                System.Web.HttpContext.Current.Response.AddHeader("Content-Disposition", "inline; filename=AllAttendeeDetails.xls");  
+                
+                //this FileName is the one will be saved in client computer, not on web server
+                System.Web.HttpContext.Current.Response.ContentType = "application/ms-excel";
+                System.Web.HttpContext.Current.Response.Write("AllAttendeeDetails.xls");
+                System.Web.HttpContext.Current.Response.Write(sw);
+                System.Web.HttpContext.Current.Response.End();
+
+                //Spire.Xls.Workbook book = new Spire.Xls.Workbook();
+                //Spire.Xls.Worksheet sheet = book.Worksheets[0];
+                //sheet.InsertDataTable(dt, true, 1, 1);
+                //book.SaveToFile(path + "\\AllAttendeeDetails.xls");
+
+                //book.SaveToFile("AllAttendeeDetails.xls");
             };
 
 

@@ -110,7 +110,7 @@
                                     <asp:SqlDataSource ID="Fiserv" runat="server" ConnectionString="<%$ ConnectionStrings:FiservConnectionString %>" SelectCommand="SELECT [DreamRole] FROM [DreamRoles]"></asp:SqlDataSource>
                                 </td>
                                 <td>
-                                    <asp:RequiredFieldValidator ID="DreamRoleRequiredFieldValidator" runat="server" ControlToValidate="DreamRoleDropDownList1" ErrorMessage="The first dream role is required" ForeColor="Red" InitialValue="Select Dream Role"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="DreamRoleRequiredFieldValidator" runat="server" ControlToValidate="DreamRoleDropDownList1" ErrorMessage="The first dream role is required" Font-Italic="True" ForeColor="Red" InitialValue="Select Dream Role"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
