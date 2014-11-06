@@ -15,7 +15,7 @@
             <div class="logoarea">
                 <img src="logo.png" />
             </div>
-            <div class="mainbody" style="width: 1150px;">
+            <div class="mainbody" style="width: 1300px;">
                 <div class="spacer"></div>
                 <div class="formdiv" style="width: 90%;">
                     <form id="form1" runat="server">
