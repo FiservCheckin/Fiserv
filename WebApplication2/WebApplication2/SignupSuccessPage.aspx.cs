@@ -14,15 +14,10 @@ namespace WebApplication2
 
         }
 
+        //function to return to sign up form
         protected void Return_Click(object sender, EventArgs e)
         {
             Response.Redirect("FiservSignUpForm.aspx");
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            
-            ClientScript.RegisterStartupScript(typeof(Page),"closePage","window.close();", true);
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="fiservcheckin-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Tiger\\Desktop\\0511\\WebApplication2\\WebApplication2\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Tiger\\Desktop\\0511\\WebApplication2\\WebApplication2\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="fiservcheckin-001-site1/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Tiger\\Desktop\\0511\\WebApplication2\\WebApplication2\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="FiservConnectionString-Web.config Connection String" description="" value="Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9B51DA_Fiserv;Persist Security Info=True;User ID=DB_9B51DA_Fiserv_admin;Password=fiservhrteam" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tiger\\Desktop\\0511\\WebApplication2\\WebApplication2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FiservConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

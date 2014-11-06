@@ -21,6 +21,32 @@ namespace WebApplication2
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["isLogin"] != null)
+            {
+                if ((bool)Session["isLogin"])
+                {
+                    
+                }
+                else
+                {
+                    Session["loginMsg"] = "Please Login first!";
+                    Response.Redirect("AdminLogin.aspx");
+                }
+
+            }
+            else
+            {
+                Session["loginMsg"] = "Please Login first!";
+                Response.Redirect("AdminLogin.aspx");
+            }
+
+        }
+        /*
+         * A function to export all the attendee's data from database to the excel sheet
+         * 
+         * */
         protected void Export_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
@@ -66,11 +92,10 @@ namespace WebApplication2
 
         }
 
-        protected void changePwBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ChangePassword.aspx");
-        }
-
+        /*
+         * A function to delete the data in database
+         * correct password is required as condition to delete the data
+         * */
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
@@ -108,7 +133,10 @@ namespace WebApplication2
             Response.Redirect("DataView.aspx");
         }
 
-      
+        /*
+         * A function to export the details of attendee with a specific dream role to excel sheet
+         * 
+         * */
         protected void ExportRole_Click(object sender, EventArgs e)
         {
             String exportText = ExportText.Text;
@@ -137,10 +165,26 @@ namespace WebApplication2
 
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                    Spire.Xls.Workbook book = new Spire.Xls.Workbook();
-                    Spire.Xls.Worksheet sheet = book.Worksheets[0];
-                    sheet.InsertDataTable(dt, true, 1, 1);
-                    book.SaveToFile(path + "\\" + exportText + "AttendeeDetails.xls");
+                    GridView grid = new GridView();
+                    grid.DataSource = dt;
+                    grid.DataBind();
+                    StringWriter sw = new StringWriter();
+                    HtmlTextWriter htw = new HtmlTextWriter(sw);
+                    grid.RenderControl(htw);
+                    sw.Close();
+                    htw.Close();
+                    System.Web.HttpContext.Current.Response.AddHeader("Content-Disposition", "inline; filename=AttendeeDetails.xls");
+
+                    //this FileName is the one will be saved in client computer, not on web server
+                    System.Web.HttpContext.Current.Response.ContentType = "application/ms-excel";
+                    System.Web.HttpContext.Current.Response.Write(exportText + "AttendeeDetails.xls");
+                    System.Web.HttpContext.Current.Response.Write(sw);
+                    System.Web.HttpContext.Current.Response.End();
+
+                    //Spire.Xls.Workbook book = new Spire.Xls.Workbook();
+                    //Spire.Xls.Worksheet sheet = book.Worksheets[0];
+                    //sheet.InsertDataTable(dt, true, 1, 1);
+                    //book.SaveToFile(path + "\\" + exportText + "AttendeeDetails.xls");
                 }
             }
             finally

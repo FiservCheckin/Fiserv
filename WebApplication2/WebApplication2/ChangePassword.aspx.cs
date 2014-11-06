@@ -14,8 +14,29 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["isLogin"] != null)
+            {
+                if ((bool)Session["isLogin"])
+                {
+                    
+                }
+                else
+                {
+                    Session["loginMsg"] = "Please Login first!";
+                    Response.Redirect("AdminLogin.aspx");
+                }
 
+            }
+            else
+            {
+                Session["loginMsg"] = "Please Login first!";
+                Response.Redirect("AdminLogin.aspx");
+            }
         }
+        /*
+         * A function to check if the new password match the format
+         * If not match, Lable2 will display msg "invalid"
+         * */
         protected void ValidateNewPw()
         {
             //define pattern of the password
@@ -29,6 +50,13 @@ namespace WebApplication2
                 Label2.Text = "invalid";
             }
         }
+
+        /*
+         * A boolean to check if admin types the same new password in both TextBox2 and TextBox3.
+         * return true if the same
+         * return not if not the same
+         * 
+         * */
         protected Boolean CheckMatch()
         {
             Boolean match = false;
@@ -39,6 +67,13 @@ namespace WebApplication2
             
             return match;
         }
+
+        /*
+         * A boolean to check if the current password is correct
+         * return true and replace the old password with the new password in database if correct
+         * return false if not
+         * 
+         * */
         protected Boolean correctPsw()
         {
             Boolean correct = false;
@@ -92,7 +127,10 @@ namespace WebApplication2
            
             return correct;
         }
-
+        /*
+         * New password will be saved if new password match the format and user type the same new password
+         * 
+         * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             ValidateNewPw();

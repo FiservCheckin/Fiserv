@@ -21,7 +21,7 @@ namespace WebApplication2
         protected void Page_Load(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-            titleLabel.Text = dt.ToString("MMMM") + " " + DateTime.Now.Year.ToString() + " Careers Fair";
+            titleLabel.Text = dt.ToString("MMMM") + " " + DateTime.Now.Year.ToString() + " Careers Fair";//get current year and month
             
             welcomeMsg.Text = WebForm6.welcomeMsg;
             if (IsPostBack)
@@ -51,7 +51,9 @@ namespace WebApplication2
                 }
             }
         }
-
+        /*
+         * A function to submit data if all necessary fields are filled with correct format
+         * */
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
@@ -100,7 +102,12 @@ namespace WebApplication2
             }      
         }
 
-       
+       /*
+        * Functions for attendee to choose their dream roles
+        * First dream role is mandatory
+        * The second and third one is not required
+        * */
+
         protected void DreamRoleDropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DreamRoleDropDownList2.Enabled == false)

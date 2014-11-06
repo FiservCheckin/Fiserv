@@ -12,9 +12,28 @@ namespace WebApplication2
         public static String welcomeMsg;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["isLogin"] != null)
+            {
+                if ((bool)Session["isLogin"])
+                {
+                    
+                }
+                else
+                {
+                    Session["loginMsg"] = "Please Login first!";
+                    Response.Redirect("AdminLogin.aspx");
+                }
 
+            }
+            else
+            {
+                Session["loginMsg"] = "Please Login first!";
+                Response.Redirect("AdminLogin.aspx");
+            }
         }
-
+        /*
+         * A function to set welcome message on sign up form
+         * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             welcomeMsg = TextBox1.Text;

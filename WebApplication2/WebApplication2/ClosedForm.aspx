@@ -22,12 +22,11 @@
     <form id="form1" runat="server">
         <p>
     
-        <asp:Label ID="Label2" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" style="text-align: center; margin-top: 0px" Text="Sorry! Fiserv Sign Up Closed" Width="500px"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" style="text-align: center; margin-top: 0px" Text="Sorry! Fiserv Sign Up is Closed." Width="500px"></asp:Label>
         <br />
         </p>
         <p>
-            <asp:Label ID="Label3" class="errorMsg" runat="server" Text="Sorry, The Fiserv sign up is now closed."></asp:Label>
-        </p>
+            &nbsp;</p>
     </form>
     </div></div></div></div>
 </body>

@@ -1,0 +1,9 @@
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.License.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.Common.xml
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\bin\Spire.XLS.xml
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Release\FiservCheckIn.csprojResolveAssemblyReference.cache
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Release\WebApplication2.dll
+C:\Users\Tiger\Desktop\0511\WebApplication2\WebApplication2\obj\Release\WebApplication2.pdb

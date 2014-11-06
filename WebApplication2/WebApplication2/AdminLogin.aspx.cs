@@ -11,6 +11,11 @@ namespace WebApplication2
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        /*
+         * A session is applied to check whether admin is log in or not
+         * If admin hasn't log in, the page will direct to admin login page
+         * 
+         * */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["isLogin"] != null)
@@ -34,6 +39,11 @@ namespace WebApplication2
             
         }
 
+        /*
+         * check if the password match with the database
+         * log the user in if match
+         * show error msg if not
+         * */
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
             try
@@ -41,6 +51,7 @@ namespace WebApplication2
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
                 conn.Open();
 
+                //psw is encrypted by MD5
                 System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
                 byte[] bs = System.Text.Encoding.UTF8.GetBytes(PW.Text);
                 bs = x.ComputeHash(bs);
@@ -60,7 +71,6 @@ namespace WebApplication2
                
                 conn.Close();
 
-                
 
                 if (psw == inputpsw)
                 {

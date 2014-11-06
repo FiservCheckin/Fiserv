@@ -17,7 +17,7 @@
             </div>
             <div class="mainbody" style="width: 1150px;">
                 <div class="spacer"></div>
-                <div class="formdiv">
+                <div class="formdiv" style="width: 90%;">
                     <form id="form1" runat="server">
                         <asp:Label ID="Label1" runat="server" Font-Size="30pt" ForeColor="#FF6600" Height="50px" Style="text-align: center; margin-top: 0px" Text="Attendee Details Table" Width="500px"></asp:Label>
                         <div>
@@ -61,7 +61,7 @@
                                 <td >Export All Data to Excel Sheet:</td>
                                 <td class="auto-style3">
                                     <br />
-                                    <asp:Button ID="Export" runat="server" Text="Export All" OnClick="Export_Click" Style="text-align: left" />
+                                    <asp:Button ID="Export" runat="server" Text="Export All" OnClick="Export_Click" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </td>
                                 <td class="auto-style6">Export
