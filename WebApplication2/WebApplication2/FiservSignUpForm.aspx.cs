@@ -45,20 +45,6 @@ namespace WebApplication2
                 {
                     GradYear.Items.Add(new ListItem((firstGradYear + i).ToString()));
                 }
-
-                if (!string.IsNullOrEmpty(ddlDegree.SelectedValue))
-                {
-                    var degreeTable = GetAllDegrees();
-
-                    if (degreeTable != null & degreeTable.Rows.Count > 0)
-                    {
-                        foreach (DataRow row in degreeTable.Rows)
-                        {
-                            ddlDegree.Items.Add(new ListItem(row.Field<string>("DegreeName"), row.Field<int>("DegreeId").ToString()));
-                        }
-                    }
-                }
- 
             }
         }
 
@@ -72,7 +58,7 @@ namespace WebApplication2
                     conn.Open();
                     //inserts the attendees inputs into the Attendee table in the database
                     
-                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,GradSem,GradYear,Role,Role2,Role3,MajorId,InputTime) values(@fname,@lname,@email,@phoneNo,@gradSem,@gradYear,@Role,@Role2,@Role3,@MajorId,@InputTime)";
+                    string insertQuery = "insert into Attendee (FirstName, LastName,Email,PhoneNo,Degree, GradSem,GradYear,Role,Role2,Role3,InputTime) values(@fname,@lname,@email,@phoneNo,@degree,@gradSem,@gradYear,@Role,@Role2,@Role3,@InputTime)";
                     
                     //execute the querys
                     SqlCommand com = new SqlCommand(insertQuery, conn);
@@ -81,6 +67,7 @@ namespace WebApplication2
                     com.Parameters.AddWithValue("@lname", Lname.Text);
                     com.Parameters.AddWithValue("@email", Email.Text);
                     com.Parameters.AddWithValue("@phoneNo", PhoneNo.Text);
+                    com.Parameters.AddWithValue("@degree", Degree.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@gradSem", GradSem.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@gradYear", GradYear.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@Role", DreamRoleDropDownList1.SelectedItem.ToString());
@@ -89,7 +76,6 @@ namespace WebApplication2
 
                     com.Parameters.AddWithValue("@Role3", DreamRoleDropDownList3.SelectedIndex == 0 ? (object)DBNull.Value : DreamRoleDropDownList3.SelectedItem.ToString());
 
-                    com.Parameters.AddWithValue("@MajorId", ddlMajor.SelectedValue);
                     com.Parameters.AddWithValue("@InputTime", DateTime.Now.ToShortDateString());
 
                     com.ExecuteNonQuery();
@@ -110,87 +96,7 @@ namespace WebApplication2
             }      
         }
 
-        protected DataTable GetAllDegrees()
-        {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
-            DataTable datatable = new DataTable();
-
-            try
-            {
-                conn.Open();
-                //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "SELECT * FROM Degrees Order By DegreeName";
-                SqlCommand com = new SqlCommand(insertQuery, conn);
-
-                using (SqlDataAdapter da = new SqlDataAdapter(com))
-                {
-                    da.Fill(datatable);
-                }
-            }
-            catch (Exception ex)
-            {
-                //Response.Write("Error:" + ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return datatable;
-        }
-        protected DataTable GetMajors(int degreeId)
-        {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["FiservConnectionString"].ConnectionString);
-            DataTable datatable = new DataTable();
-            try
-            {
-                conn.Open();
-                //inserts the attendees inputs into the Attendee table in the database
-                string insertQuery = "SELECT * FROM Majors WHERE DegreeId = @DegreeId ORDER BY MajorName";
-                SqlCommand com = new SqlCommand(insertQuery, conn);
-                com.Parameters.AddWithValue("@DegreeId", degreeId);
-
-                using (SqlDataAdapter da = new SqlDataAdapter(com))
-                {
-                    da.Fill(datatable);
-                }
-            }
-            catch (Exception ex)
-            {
-                //Response.Write("Error:" + ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return datatable;
-        }
-
-        protected void ddlDegree_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            while (ddlMajor.Items.Count > 1)
-            {
-                ddlMajor.Items.RemoveAt(1);
-            }
-
-            int degreeId = 0;
-            if (!int.TryParse(ddlDegree.SelectedValue, out degreeId))
-                return;
-
-            if (!string.IsNullOrEmpty(ddlDegree.SelectedValue))
-            {
-                var majorTable = GetMajors(degreeId);
-
-                if (majorTable != null & majorTable.Rows.Count > 0)
-                {
-                    foreach (DataRow row in majorTable.Rows)
-                    {
-                        ddlMajor.Items.Add(new ListItem(row.Field<string>("MajorName"), row.Field<int>("MajorId").ToString()));
-                    }
-                }
-            }
-        }
-
+       
         protected void DreamRoleDropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DreamRoleDropDownList2.Enabled == false)

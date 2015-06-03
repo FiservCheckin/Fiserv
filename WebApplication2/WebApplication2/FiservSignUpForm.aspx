@@ -69,36 +69,25 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="PhoneNo" ErrorMessage="Invalid Number" Font-Italic="True" ForeColor="Red" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                                 </td>
                             </tr>
-                            <asp:UpdatePanel ID="upMajorPickPane" runat="server" UpdateMode="Always">
-                                <ContentTemplate>
-                                    <tr>
-                                        <td class="auto-style2">Degree:</td>
-                                        <td class="auto-style3">
-                                            <asp:DropDownList ID="ddlDegree" runat="server"  OnSelectedIndexChanged="ddlDegree_SelectedIndexChanged" AutoPostBack="true">
-                                                <asp:ListItem>Select A Degree</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlDegree" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select A Degree" EnableClientScript="true"></asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="auto-style2">Major</td>
-                                        <td class="auto-style3">
-                                            <asp:DropDownList ID="ddlMajor" runat="server" >
-                                                <asp:ListItem>What is your major studied?</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlMajor" ErrorMessage="Major Is Required" Font-Italic="True" ForeColor="Red" InitialValue="What is your major studied?" EnableClientScript="true"></asp:RequiredFieldValidator>
-                                            <br />
-                                        </td>
-                                    </tr>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
                             <tr>
-                                <td class="auto-style2">Graduation Year:</td>
+                                <td class="auto-style2">Degree:</td>
                                 <td class="auto-style7">
+                                    <asp:DropDownList ID="Degree" runat="server" >
+                                        <asp:ListItem>Select Degree</asp:ListItem>
+                                        <asp:ListItem>Computer science</asp:ListItem>
+                                        <asp:ListItem>Business</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="degreeRequiredFieldValidator" runat="server" ControlToValidate="Degree" EnableClientScript="true" ErrorMessage="Degree Is Required" Font-Italic="True" ForeColor="Red" InitialValue="Select Degree"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style2">Graduation Year:<br />
+                                    <br />
+                                </td>
+                                <td class="auto-style7">
+                                    <br />
                                     <asp:DropDownList ID="GradSem" runat="server" >
                                         <asp:ListItem>Select Semester</asp:ListItem>
                                         <asp:ListItem>Semester 1</asp:ListItem>
